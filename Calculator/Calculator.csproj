@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="calculator.png" />
+    <None Remove="CE.png" />
+    <None Remove="clear-symbol.png" />
+    <None Remove="division.png" />
+    <None Remove="equal-sign.png" />
+    <None Remove="icons8-c-48.png" />
+    <None Remove="icons8-history-48.png" />
+    <None Remove="icons8-percentage-48.png" />
+    <None Remove="menuba.png" />
+    <None Remove="minus-math.png" />
+    <None Remove="multiply.png" />
+    <None Remove="noqte.png" />
+    <None Remove="plus-minus.png" />
+    <None Remove="plus.png" />
+    <None Remove="square-root.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="calculator.png" />
+    <Resource Include="CE.png" />
+    <Resource Include="clear-symbol.png" />
+    <Resource Include="division.png" />
+    <Resource Include="equal-sign.png" />
+    <Resource Include="icons8-c-48.png" />
+    <Resource Include="icons8-history-48.png" />
+    <Resource Include="icons8-percentage-48.png" />
+    <Resource Include="menuba.png" />
+    <Resource Include="minus-math.png" />
+    <Resource Include="multiply.png" />
+    <Resource Include="noqte.png" />
+    <Resource Include="plus-minus.png" />
+    <Resource Include="plus.png" />
+    <Resource Include="square-root.png" />
+  </ItemGroup>
+
+</Project>

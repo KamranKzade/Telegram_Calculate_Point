@@ -1,0 +1,509 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="Calculator" Height="600" Width="400"
+        WindowStartupLocation="CenterScreen" 
+        BorderBrush="Black"
+        BorderThickness="5"   
+        MinWidth="400" MaxWidth="400" MaxHeight="600" MinHeight="600"
+        Icon="/calculator.png"
+        WindowState="Normal">
+    <Grid>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Title && M buttonlar -->
+            <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Title -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- MenuBar -->
+                    <Grid Grid.Column="0">
+                        <Button BorderThickness="0" Click="Button_Click"
+                                Background="Transparent"
+                                VerticalContentAlignment="Center"
+                                VerticalAlignment="Center"
+                                Padding="3"
+                                HorizontalContentAlignment="Center"
+                                HorizontalAlignment="Center">
+                            <Image Source="/menuba.png" 
+                                   Stretch="Uniform"/>
+                        </Button>
+                    </Grid>
+
+                    <!-- Standard -->
+                    <Label Grid.Column="1"
+                           Content="Standart"
+                           FontWeight="Medium"
+                           FontStyle="Normal"
+                           FontSize="18"
+                           Margin="0 3"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           VerticalContentAlignment="Center"
+                           HorizontalContentAlignment="Center">
+
+                    </Label>
+
+                    <!-- History -->
+                    <Grid Grid.Column="2">
+                        <Button BorderThickness="0"
+                                Click="Button_Click"
+                                Background="Transparent"
+                                VerticalContentAlignment="Center"
+                                VerticalAlignment="Center"
+                                Padding="3"
+                                HorizontalContentAlignment="Center"
+                                HorizontalAlignment="Center">
+                            <Image Source="/icons8-history-48.png" 
+                                   Stretch="Uniform"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+                <!-- TextBox -->
+                <TextBox Grid.Row="1"
+                         Name="txtbox"
+                         Text="0"
+                         IsEnabled="False"
+                         FontWeight="Medium"
+                         FontSize="26"
+                         VerticalContentAlignment="Bottom"
+                         HorizontalContentAlignment="Right">
+                    <TextBox.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FC354C" Offset="0"/>
+                            <GradientStop Color="Bisque" Offset="0.5"/>
+                            <GradientStop Color="#0ABFBC" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+                <!-- M Buttons -->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="Button_Click"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Foreground="LightGray"
+                        FontSize="20"
+                        Padding="2"
+                        FontWeight="Bold"
+                        Content="MC"
+                            />
+                    <Button Click="Button_Click"
+                        Grid.Column="1"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Foreground="LightGray"
+                        FontSize="20"
+                        Padding="2"
+                        FontWeight="Bold"
+                        Content="MR"
+                            />
+                    <Button Click="Button_Click"
+                        Grid.Column="2"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Foreground="DimGray"
+                        FontSize="20"
+                        Padding="2"
+                        FontWeight="Bold"
+                        Content="M+"
+                            />
+                    <Button Click="Button_Click"
+                        Grid.Column="3"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Foreground="DimGray"
+                        FontSize="20"
+                        Padding="2"
+                        FontWeight="Bold"
+                        Content="M-"
+                            />
+                    <Button Click="Button_Click"
+                        Grid.Column="4"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Foreground="DimGray"
+                        FontSize="20"
+                        Padding="2"
+                        FontWeight="Bold"
+                        Content="MS"
+                            />
+                    <Button Click="Button_Click"
+                        Grid.Column="5"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Foreground="LightGray"
+                        FontSize="20"
+                        Padding="2"
+                        FontWeight="Bold"
+                        Content="M*"
+                            />
+
+                </Grid>
+            </Grid>
+
+            <Grid Background="#FCFCFC" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!-- Symbols -->
+                <Button Grid.Row="0" Grid.Column="0"
+                        Name="Faiz"
+                        Background="#DBDBD7"
+                        Padding="10"
+                        BorderThickness="0">
+                    <Image Source="/icons8-percentage-48.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="1"
+                        Name="CE"
+                        Background="#DBDBD7"
+                        Padding="10"
+                        BorderThickness="0">
+                    <Image Source="/CE.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="2"
+                        Name="C"
+                        Background="#DBDBD7"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/icons8-c-48.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="3"
+                        Name="Clear"
+                        Background="#DBDBD7"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/clear-symbol.png" Stretch="Uniform"/>
+                </Button>
+
+                <Button Grid.Row="1" Grid.Column="0"
+                        Name="tersine_cevirme"
+                        Background="#DBDBD7"
+                        Padding="10"
+                        BorderThickness="0">
+                    <Label Content="1/x"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="1"
+                        Name="quvvet"
+                        Background="#DBDBD7"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Label Content="x2"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="2"
+                        Name="kok"
+                        Background="#DBDBD7"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/square-root.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="3"
+                        Name="bolme"
+                        Background="#DBDBD7"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/division.png" Stretch="Uniform"/>
+                </Button>
+
+                <Button Grid.Row="2" Grid.Column="3"
+                        Name="vurma"
+                        Background="#DBDBD7"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/multiply.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="3"
+                        Background="#DBDBD7"
+                        Name="minus"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/minus-math.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="3"
+                        Background="#DBDBD7"
+                        Name="plus"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/plus.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="3"
+                        Name="equals"
+                        Background="LightBlue"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/equal-sign.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="0"
+                        Name="plusAndMinus"
+                        Background="Transparent"
+                        Padding="12"
+                        BorderThickness="0">
+                    <Image Source="/plus-minus.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="2"
+                        Name="noqte"
+                        Background="Transparent"
+                        Padding="25"
+                        BorderThickness="0">
+                    <Image Source="/noqte.png" Stretch="Uniform"/>
+                </Button>
+
+
+                <!-- Reqemler -->
+
+                <Button Grid.Row="2" Grid.Column="0"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="7"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="1"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="8"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="2"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="9"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="0"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="4"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="1"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="5"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="2"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="6"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="0"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="1"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="1"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="2"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="2"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="3"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="1"
+                        Background="Transparent"
+                        Padding="12"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0">
+                    <Label Content="0"
+                           FontSize="25"
+                           FontWeight="Medium"/>
+                </Button>
+
+
+                <!-- Borderler -->
+                <Border Grid.Row="0" Grid.Column="0"
+                        BorderBrush="DimGray" 
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="0" Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="0" Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="0" Grid.Column="3"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="1" Grid.Column="0"
+                        BorderBrush="DimGray" 
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="1" Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="1" Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="1" Grid.Column="3"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="2" Grid.Column="0"
+                        BorderBrush="DimGray" 
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="2" Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="2" Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="2" Grid.Column="3"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="3" Grid.Column="0"
+                        BorderBrush="DimGray" 
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="3" Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="3" Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="3" Grid.Column="3"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="4" Grid.Column="0"
+                        BorderBrush="DimGray" 
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="4" Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="4" Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="4" Grid.Column="3"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="5" Grid.Column="0"
+                        BorderBrush="DimGray" 
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="5" Grid.Column="1"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="5" Grid.Column="2"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+                <Border Grid.Row="5" Grid.Column="3"
+                        BorderBrush="DimGray"
+                        BorderThickness="0 0 2 2"/>
+
+            </Grid>
+
+
+
+        </Grid>
+
+    </Grid>
+</Window>
