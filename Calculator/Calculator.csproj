@@ -26,21 +26,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="calculator.png" />
-    <Resource Include="CE.png" />
-    <Resource Include="clear-symbol.png" />
-    <Resource Include="division.png" />
-    <Resource Include="equal-sign.png" />
-    <Resource Include="icons8-c-48.png" />
-    <Resource Include="icons8-history-48.png" />
-    <Resource Include="icons8-percentage-48.png" />
-    <Resource Include="menuba.png" />
-    <Resource Include="minus-math.png" />
-    <Resource Include="multiply.png" />
-    <Resource Include="noqte.png" />
-    <Resource Include="plus-minus.png" />
-    <Resource Include="plus.png" />
-    <Resource Include="square-root.png" />
+    <Resource Include="Images\calculator.png" />
+    <Resource Include="Images\CE.png" />
+    <Resource Include="Images\clear-symbol.png" />
+    <Resource Include="Images\icons8-c-48.png" />
+    <Resource Include="Images\icons8-history-48.png" />
+    <Resource Include="Images\icons8-percentage-48.png" />
+    <Resource Include="Images\menuba.png" />
+    <Resource Include="Images\plus-minus.png" />
+    <Resource Include="Images\square-root.png" />
   </ItemGroup>
 
 </Project>

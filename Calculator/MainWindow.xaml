@@ -9,8 +9,8 @@
         WindowStartupLocation="CenterScreen" 
         BorderBrush="Black"
         BorderThickness="5"   
-        MinWidth="400" MaxWidth="400" MaxHeight="600" MinHeight="600"
-        Icon="/calculator.png"
+        Icon="/Images/calculator.png"
+        ResizeMode="NoResize"
         WindowState="Normal">
     <Grid>
         <Grid >
@@ -44,8 +44,9 @@
                                 VerticalAlignment="Center"
                                 Padding="3"
                                 HorizontalContentAlignment="Center"
-                                HorizontalAlignment="Center">
-                            <Image Source="/menuba.png" 
+                                HorizontalAlignment="Center"
+                                Name="menubar">
+                            <Image Source="/Images/menuba.png" 
                                    Stretch="Uniform"/>
                         </Button>
                     </Grid>
@@ -68,13 +69,14 @@
                     <Grid Grid.Column="2">
                         <Button BorderThickness="0"
                                 Click="Button_Click"
+                                Name="history"
                                 Background="Transparent"
                                 VerticalContentAlignment="Center"
                                 VerticalAlignment="Center"
                                 Padding="3"
                                 HorizontalContentAlignment="Center"
                                 HorizontalAlignment="Center">
-                            <Image Source="/icons8-history-48.png" 
+                            <Image Source="/Images/icons8-history-48.png" 
                                    Stretch="Uniform"/>
                         </Button>
                     </Grid>
@@ -83,7 +85,7 @@
                 <!-- TextBox -->
                 <TextBox Grid.Row="1"
                          Name="txtbox"
-                         Text="0"
+                         Text=""
                          IsEnabled="False"
                          FontWeight="Medium"
                          FontSize="26"
@@ -110,6 +112,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Click="Button_Click"
+                            Name="mc"
                         HorizontalContentAlignment="Center"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
@@ -123,6 +126,7 @@
                         Content="MC"
                             />
                     <Button Click="Button_Click"
+                        Name="mr"
                         Grid.Column="1"
                         HorizontalContentAlignment="Center"
                         VerticalAlignment="Center"
@@ -138,6 +142,7 @@
                             />
                     <Button Click="Button_Click"
                         Grid.Column="2"
+                        Name="mplus"
                         HorizontalContentAlignment="Center"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
@@ -152,6 +157,7 @@
                             />
                     <Button Click="Button_Click"
                         Grid.Column="3"
+                        Name="mminus"
                         HorizontalContentAlignment="Center"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
@@ -165,6 +171,7 @@
                         Content="M-"
                             />
                     <Button Click="Button_Click"
+                        Name="ms"
                         Grid.Column="4"
                         HorizontalContentAlignment="Center"
                         VerticalAlignment="Center"
@@ -180,6 +187,7 @@
                             />
                     <Button Click="Button_Click"
                         Grid.Column="5"
+                        Name="mvur"
                         HorizontalContentAlignment="Center"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
@@ -215,37 +223,39 @@
 
 
                 <!-- Symbols -->
-                <Button Grid.Row="0" Grid.Column="0"
+                <Button Click="Button_Click" Grid.Row="0" Grid.Column="0"
                         Name="Faiz"
                         Background="#DBDBD7"
                         Padding="10"
                         BorderThickness="0">
-                    <Image Source="/icons8-percentage-48.png" Stretch="Uniform"/>
+                    <Image Source="/Images/icons8-percentage-48.png" Stretch="Uniform"/>
                 </Button>
-                <Button Grid.Row="0" Grid.Column="1"
+                <Button Grid.Row="0" Click="Button_Click" Grid.Column="1"
                         Name="CE"
                         Background="#DBDBD7"
                         Padding="10"
                         BorderThickness="0">
-                    <Image Source="/CE.png" Stretch="Uniform"/>
+                    <Image Source="/Images/CE.png" Stretch="Uniform"/>
                 </Button>
                 <Button Grid.Row="0" Grid.Column="2"
-                        Name="C"
+                        Name="C" Click="Button_Click"
                         Background="#DBDBD7"
                         Padding="12"
                         BorderThickness="0">
-                    <Image Source="/icons8-c-48.png" Stretch="Uniform"/>
+                    <Image Source="/Images/icons8-c-48.png" Stretch="Uniform"/>
                 </Button>
                 <Button Grid.Row="0" Grid.Column="3"
+                        Click="Button_Click"
                         Name="Clear"
                         Background="#DBDBD7"
                         Padding="12"
                         BorderThickness="0">
-                    <Image Source="/clear-symbol.png" Stretch="Uniform"/>
+                    <Image Source="/Images/clear-symbol.png" Stretch="Uniform"/>
                 </Button>
 
                 <Button Grid.Row="1" Grid.Column="0"
                         Name="tersine_cevirme"
+                        Click="Button_Click"
                         Background="#DBDBD7"
                         Padding="10"
                         BorderThickness="0">
@@ -255,6 +265,7 @@
                 </Button>
                 <Button Grid.Row="1" Grid.Column="1"
                         Name="quvvet"
+                        Click="Button_Click"
                         Background="#DBDBD7"
                         Padding="12"
                         BorderThickness="0">
@@ -264,164 +275,152 @@
                 </Button>
                 <Button Grid.Row="1" Grid.Column="2"
                         Name="kok"
+                        Click="Button_Click"
                         Background="#DBDBD7"
                         Padding="12"
                         BorderThickness="0">
-                    <Image Source="/square-root.png" Stretch="Uniform"/>
-                </Button>
-                <Button Grid.Row="1" Grid.Column="3"
-                        Name="bolme"
-                        Background="#DBDBD7"
-                        Padding="12"
-                        BorderThickness="0">
-                    <Image Source="/division.png" Stretch="Uniform"/>
+                    <Image Source="/Images/square-root.png" Stretch="Uniform"/>
                 </Button>
 
-                <Button Grid.Row="2" Grid.Column="3"
-                        Name="vurma"
+
+                <!-- Riyazi hesablamalar -->
+                <Button Grid.Row="1" Grid.Column="3"
+                        Click="Button_Click"
                         Background="#DBDBD7"
-                        Padding="12"
+                        FontSize="40"
+                        FontWeight="Medium"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Content="/"
                         BorderThickness="0">
-                    <Image Source="/multiply.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="3"
+                        Click="Button_Click"
+                        Background="#DBDBD7"
+                        FontSize="40"
+                        FontWeight="Medium"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Content="*"
+                        BorderThickness="0">
                 </Button>
                 <Button Grid.Row="3" Grid.Column="3"
+                        Click="Button_Click"
                         Background="#DBDBD7"
-                        Name="minus"
-                        Padding="12"
-                        BorderThickness="0">
-                    <Image Source="/minus-math.png" Stretch="Uniform"/>
-                </Button>
+                        Content="-"
+                        FontSize="40"
+                        FontWeight="Medium"                       
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        BorderThickness="0"/>
                 <Button Grid.Row="4" Grid.Column="3"
+                        Click="Button_Click"
                         Background="#DBDBD7"
-                        Name="plus"
-                        Padding="12"
-                        BorderThickness="0">
-                    <Image Source="/plus.png" Stretch="Uniform"/>
-                </Button>
+                        Content="+"
+                        FontSize="40"
+                        FontWeight="Medium"                       
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        BorderThickness="0"/>
                 <Button Grid.Row="5" Grid.Column="3"
-                        Name="equals"
-                        Background="LightBlue"
-                        Padding="12"
-                        BorderThickness="0">
-                    <Image Source="/equal-sign.png" Stretch="Uniform"/>
-                </Button>
+                        Click="Button_Click_1"
+                        Background="#DBDBD7"
+                        Content="="
+                        FontSize="40"
+                        FontWeight="Medium"                       
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        BorderThickness="0"/>
                 <Button Grid.Row="5" Grid.Column="0"
                         Name="plusAndMinus"
+                        Click="Button_Click"
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0">
-                    <Image Source="/plus-minus.png" Stretch="Uniform"/>
+                    <Image Source="/Images/plus-minus.png" Stretch="Uniform"/>
                 </Button>
                 <Button Grid.Row="5" Grid.Column="2"
-                        Name="noqte"
-                        Background="Transparent"
-                        Padding="25"
-                        BorderThickness="0">
-                    <Image Source="/noqte.png" Stretch="Uniform"/>
-                </Button>
+                         Click="Button_Click"
+                        Background="#DBDBD7"
+                        Content="."
+                        FontSize="40"
+                        FontWeight="Medium"                       
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        BorderThickness="0"/>
 
 
                 <!-- Reqemler -->
 
-                <Button Grid.Row="2" Grid.Column="0"
+                <Button Click="Button_Click" Grid.Row="2" Grid.Column="0"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="7"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="2" Grid.Column="1"
+                        BorderThickness="0" Content="7"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click" Grid.Row="2" Grid.Column="1"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="8"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="2" Grid.Column="2"
+                        BorderThickness="0" Content="8"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click"  Grid.Row="2" Grid.Column="2"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="9"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="3" Grid.Column="0"
+                        BorderThickness="0" 
+                        Content="9"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click"  Grid.Row="3" Grid.Column="0"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="4"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="3" Grid.Column="1"
+                        BorderThickness="0" 
+                        Content="4"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click"  Grid.Row="3" Grid.Column="1"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="5"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="3" Grid.Column="2"
+                        BorderThickness="0" 
+                        Content="5"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click"  Grid.Row="3" Grid.Column="2"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="6"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="4" Grid.Column="0"
+                        BorderThickness="0"
+                        Content="6"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click"  Grid.Row="4" Grid.Column="0"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="1"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="4" Grid.Column="1"
+                        BorderThickness="0" 
+                        Content="1"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click"  Grid.Row="4" Grid.Column="1"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="2"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="4" Grid.Column="2"
+                        BorderThickness="0"
+                        Content="2"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click"  Grid.Row="4" Grid.Column="2"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="3"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
-                <Button Grid.Row="5" Grid.Column="1"
+                        BorderThickness="0"
+                        Content="3"
+                        FontSize="25"
+                        FontWeight="Medium"/>
+                <Button Click="Button_Click"  Grid.Row="5" Grid.Column="1"
                         Background="Transparent"
                         Padding="12"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        BorderThickness="0">
-                    <Label Content="0"
-                           FontSize="25"
-                           FontWeight="Medium"/>
+                        BorderThickness="0"
+                        Content="0"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        >
                 </Button>
 
 
@@ -500,9 +499,6 @@
                         BorderThickness="0 0 2 2"/>
 
             </Grid>
-
-
-
         </Grid>
 
     </Grid>
