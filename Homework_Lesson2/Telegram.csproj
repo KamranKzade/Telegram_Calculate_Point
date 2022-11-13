@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="chevron-right.png" />
+    <None Remove="expand-arrow.png" />
+    <None Remove="female-teacher--v2.png" />
+    <None Remove="school-director-male-skin-type-1-2.png" />
+    <None Remove="search.png" />
+    <None Remove="telegram-app--v3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="chevron-right.png" />
+    <Resource Include="expand-arrow.png" />
+    <Resource Include="female-teacher--v2.png" />
+    <Resource Include="school-director-male-skin-type-1-2.png" />
+    <Resource Include="search.png" />
+    <Resource Include="telegram-app--v3.png" />
+  </ItemGroup>
+
+</Project>
