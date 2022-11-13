@@ -10,18 +10,28 @@
   <ItemGroup>
     <None Remove="chevron-right.png" />
     <None Remove="expand-arrow.png" />
+    <None Remove="external-delete-multimedia-kiranshastry-lineal-kiranshastry.png" />
     <None Remove="female-teacher--v2.png" />
+    <None Remove="icons8-link-48 %281%29.png" />
+    <None Remove="icons8-link-48.png" />
+    <None Remove="phone.png" />
     <None Remove="school-director-male-skin-type-1-2.png" />
     <None Remove="search.png" />
+    <None Remove="smiling.png" />
     <None Remove="telegram-app--v3.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="chevron-right.png" />
     <Resource Include="expand-arrow.png" />
+    <Resource Include="external-delete-multimedia-kiranshastry-lineal-kiranshastry.png" />
     <Resource Include="female-teacher--v2.png" />
+    <Resource Include="icons8-link-48 (1).png" />
+    <Resource Include="icons8-link-48.png" />
+    <Resource Include="phone.png" />
     <Resource Include="school-director-male-skin-type-1-2.png" />
     <Resource Include="search.png" />
+    <Resource Include="smiling.png" />
     <Resource Include="telegram-app--v3.png" />
   </ItemGroup>
 
