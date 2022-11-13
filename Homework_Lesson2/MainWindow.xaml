@@ -143,6 +143,7 @@
 
                     <Grid Grid.Column="1">
                         <TextBox
+                        Name="search"
                         BorderThickness="0"
                         Padding="4 0"  
                         Foreground="LightGray"
@@ -956,6 +957,7 @@
                     </Border>
                     <Grid Grid.Column="2" >
                         <TextBox
+                        Name="message"
                         BorderThickness="0"
                         Padding="4 0"  
                         Foreground="LightGray"
