@@ -579,7 +579,8 @@
                             <StackPanel Orientation="Horizontal" Grid.Row="0">
                                 <Border VerticalAlignment="Center"
                                         BorderBrush="Red"
-                                        BorderThickness="5"
+                                        BorderThickness="15"
+                                        Padding="20"
                                         CornerRadius="100"
                                         HorizontalAlignment="Center">
 
@@ -679,7 +680,8 @@
                             <!-- Element 3-->
                             <StackPanel Grid.Row="2" Orientation="Horizontal">
                                 <Border BorderBrush="Red" 
-                                        BorderThickness="5"
+                                        BorderThickness="15"
+                                        Padding="20"
                                         CornerRadius="100">
                                     <Image   Source="/Images/female-teacher--v2.png"
                                              Name="Image2"                            
