@@ -107,7 +107,7 @@
                 </StackPanel>
             </Grid>
 
-            
+
             <!-- Search && Resent && All Contacts -->
             <Grid Grid.Row="1" Grid.Column="0">
                 <Grid.RowDefinitions >
@@ -494,274 +494,299 @@
 
 
             <!-- Message Part -->
-            <Grid Grid.Column="1" Grid.Row="1" >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.9*"/>
-                    <RowDefinition Height="8*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+
+                <Grid>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.9*"/>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Beige" Offset="0"/>
+                                <GradientStop Color="DarkCyan" Offset="0.5"/>
+                                <GradientStop Color="DarkKhaki" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+
+                        <!-- ++++ RecycleBin && Call -->
+                        <Grid Grid.Row="0" Background="#E0E7EB">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
 
 
-                <!-- ++++ RecycleBin && Call -->
-                <Grid Grid.Row="0" Background="#E0E7EB">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.5*"/>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="0.5*"/>
-                        <ColumnDefinition Width="0.5*"/>
-                    </Grid.ColumnDefinitions>
-
-
-                    <Image Grid.Column="0"
-                       Source="/Images/female-teacher--v2.png"
-                       Stretch="Uniform"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-                    <Label  Grid.Column="1"
-                        Content="Lovely Girl"
-                        Padding="4 0"  
-                        Foreground="DimGray"
-                        HorizontalContentAlignment="Left"
-                        VerticalContentAlignment="Center"
-                        FontWeight="Medium"
-                        FontSize="30"
-                           />
-                    <Button Grid.Column="2"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Cursor="Hand"
-                        Padding="10">
-                        <Image Source="/Images/external-delete-multimedia-kiranshastry-lineal-kiranshastry.png"
-                           Stretch="Uniform"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
-                    </Button>
-                    <Button Grid.Column="3"
-                        Padding="10"
-                        BorderThickness="0"
-                        Cursor="Hand"
-                        Background="Transparent">
-                        <Image Source="/Images/phone.png"
-                           Stretch="Uniform"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
-                    </Button>
-
-
-                    <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
-                    <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
-                    <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
-                    <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
-                </Grid>
-
-                <!-- +++ Message with Image ( Time ) -->
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <!-- Element 1-->
-                    <StackPanel Orientation="Horizontal" Grid.Row="0">
-                        <Label VerticalAlignment="Center"
-                               HorizontalAlignment="Center">
-                            <Image Source="/Images/female-teacher--v2.png"
+                            <Image Grid.Column="0"
+                                   Name="Title_Image"
+                                   Source="/Images/female-teacher--v2.png"
                                    Stretch="Uniform"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"/>
-                        </Label>
+                            <Label  Grid.Column="1"
+                                    x:Name="Title_Name"
+                                    Content="Lovely Girl"
+                                    Padding="4 0"  
+                                    Foreground="DimGray"
+                                    HorizontalContentAlignment="Left"
+                                    VerticalContentAlignment="Center"
+                                    FontWeight="Medium"
+                                    FontSize="30"
+                           />
+                            <Button Grid.Column="2"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Cursor="Hand"
+                                    Padding="10">
+                                <Image Source="/Images/external-delete-multimedia-kiranshastry-lineal-kiranshastry.png"
+                                       Stretch="Uniform"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            </Button>
+                            <Button Grid.Column="3"
+                                    Padding="10"
+                                    BorderThickness="0"
+                                    Cursor="Hand"
+                                    Background="Transparent">
+                                <Image Source="/Images/phone.png"
+                                       Stretch="Uniform"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            </Button>
 
-                        <StackPanel>
-                            <Border BorderBrush="#244B6A"
-                                    BorderThickness="10"
-                                    CornerRadius="20">
-                                <TextBlock Background="#244B6A"
-                                           Foreground="#FAFBFC"
-                                           FontWeight="Medium"
-                                           FontSize="16"
-                                           Padding="15">
-                                  Business processes, circuit diagrams and sewing <LineBreak/>
-                                  Design hass different connottations in different fields
-                                </TextBlock>
-                            </Border>
-                            <Label Content="1 Min"
-                                   Foreground="LightGray"
-                                   FontSize="18"
-                                   FontWeight="Medium"
-                                   Margin="5 0"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <!-- Element 2-->
-                    <StackPanel Grid.Row="1" >
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <StackPanel>
-                                <Border Grid.Column="0"
-                                        BorderBrush="#244B6A"
-                                        BorderThickness="10"
-                                        HorizontalAlignment="Right"
-                                        VerticalAlignment="Center"
-                                        CornerRadius="20">
 
-                                    <TextBlock  HorizontalAlignment="Left" 
-                                                VerticalAlignment="Center"
-                                                Background="#244B6A"
-                                                Foreground="#FAFBFC"
-                                                FontWeight="Medium"
-                                                FontSize="16"
-                                                Padding="15">
-                                                Business processes, circuit diagrams and sewing <LineBreak/>
-                                                Design hass different connottations in different fields
-                                    </TextBlock>
+                            <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                            <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                            <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                            <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
+                        </Grid>
+
+                        <!-- +++ Message with Image ( Time ) -->
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Element 1-->
+                            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                                <Border VerticalAlignment="Center"
+                                        BorderBrush="Red"
+                                        BorderThickness="5"
+                                        CornerRadius="100"
+                                        HorizontalAlignment="Center">
+
+                                    <Image Source="/Images/female-teacher--v2.png"
+                                           Stretch="UniformToFill"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"/>
                                 </Border>
-                                <Label Grid.Row="1"
-                                       Content="1 Min"
-                                       Foreground="LightGray"
-                                       FontSize="18"
-                                       FontWeight="Medium"
-                                       HorizontalContentAlignment="Right"
-                                       Margin="10 0"/>
+
+                                <StackPanel>
+                                    <Border BorderBrush="#244B6A"
+                                            BorderThickness="10"
+                                            CornerRadius="20">
+                                        <TextBlock Background="#244B6A"
+                                                   Name="txtblok_1"
+                                                   Foreground="#FAFBFC"
+                                                   FontWeight="Medium"
+                                                   FontSize="16"
+                                                   Padding="15">
+                                                   Business processes, circuit diagrams and sewing <LineBreak/>
+                                                   Design hass different connottations in different fields
+                                        </TextBlock>
+                                    </Border>
+                                    <Label Content="1 Min"
+                                           Foreground="LightGray"
+                                           FontSize="18"
+                                           FontWeight="Medium"
+                                           Margin="5 0"/>
+                                </StackPanel>
                             </StackPanel>
 
-                            <Border  BorderBrush="WhiteSmoke"
-                                     BorderThickness="5"
-                                     CornerRadius="100"
-                                     VerticalAlignment="Center"
-                                     HorizontalAlignment="Right">
-                                <Border.Background>
-                                    <LinearGradientBrush >
-                                        <GradientStop Color="ForestGreen" Offset="0"></GradientStop>
-                                        <GradientStop Color="Yellow" Offset="0"></GradientStop>
-                                        <GradientStop Color="Blue" Offset="1"></GradientStop>
-                                    </LinearGradientBrush>
-                                </Border.Background>
+                            <!-- Element 2-->
+                            <StackPanel Grid.Row="1" >
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Right">
+                                    <StackPanel>
+                                        <Border Grid.Column="0"
+                                                BorderBrush="#244B6A"
+                                                BorderThickness="10"
+                                                HorizontalAlignment="Right"
+                                                VerticalAlignment="Center"
+                                                CornerRadius="20">
 
-                                <Label
-                                Margin="5 12 5 12"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center"
-                                Grid.Column="0" 
-                                FontWeight="Medium"
-                                FontSize="44"
-                                Foreground="#FAFBFC"
-                                HorizontalContentAlignment="Center"
-                                VerticalContentAlignment="Center"
-                                Background="Transparent"
-                                Content="VM"/>
+                                            <TextBlock  HorizontalAlignment="Left" 
+                                                        VerticalAlignment="Center"
+                                                        Background="#244B6A"
+                                                        Name="txtblok_2"
+                                                        Foreground="#FAFBFC"
+                                                        FontWeight="Medium"
+                                                        FontSize="16"
+                                                        Padding="15">
+                                                        Business processes, circuit diagrams and sewing <LineBreak/>
+                                                        Design hass different connottations in different fields
+                                            </TextBlock>
+                                        </Border>
+                                        <Label Grid.Row="1"
+                                               Content="1 Min"
+                                               Foreground="LightGray"
+                                               FontSize="18"
+                                               FontWeight="Medium"
+                                               HorizontalContentAlignment="Right"
+                                               Margin="10 0"/>
+                                    </StackPanel>
+
+                                    <Border  BorderBrush="WhiteSmoke"
+                                             BorderThickness="5"
+                                             CornerRadius="100"
+                                             VerticalAlignment="Center"
+                                             HorizontalAlignment="Right">
+                                        <Border.Background>
+                                            <LinearGradientBrush >
+                                                <GradientStop Color="ForestGreen" Offset="0"></GradientStop>
+                                                <GradientStop Color="Yellow" Offset="0"></GradientStop>
+                                                <GradientStop Color="Blue" Offset="1"></GradientStop>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+
+                                        <Label
+                                                Margin="5 12 5 12"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                Grid.Column="0" 
+                                                FontWeight="Medium"
+                                                FontSize="44"
+                                                Foreground="#FAFBFC"
+                                                HorizontalContentAlignment="Center"
+                                                VerticalContentAlignment="Center"
+                                                Background="Transparent"
+                                                Content="VM"/>
+                                    </Border>
+
+                                </StackPanel>
+
+
+                            </StackPanel>
+
+                            <!-- Element 3-->
+                            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                <Border BorderBrush="Red" 
+                                        BorderThickness="5"
+                                        CornerRadius="100">
+                                    <Image   Source="/Images/female-teacher--v2.png"
+                                             Name="Image2"                            
+                                             Stretch="Uniform"
+                                             VerticalAlignment="Center"
+                                             HorizontalAlignment="Center"/>
+                                </Border>
+
+                                <StackPanel Grid.Column="1">
+                                    <Border BorderBrush="#244B6A"
+                                            BorderThickness="10"
+                                            CornerRadius="20">
+
+                                        <TextBlock  
+                                                    Name="txtblok3"
+                                                    Text="................."
+                                                    VerticalAlignment="Center"
+                                                    Background="#244B6A"
+                                                    Foreground="#FAFBFC"
+                                                    FontWeight="Medium"
+                                                    FontSize="35"
+                                                    Padding="8"/>
+                                    </Border>
+                                    <Label Content="Typing..."
+                                           FontSize="22"
+                                           Foreground="DimGray"
+                                           FontWeight="Medium"
+                                           FontStyle="Italic"/>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+
+
+                        <!-- +++ Send a message -->
+                        <Border Grid.Row="2" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Grid.Column="0" 
+                                    BorderBrush="DarkGray"
+                                    CornerRadius="15" 
+                                    VerticalAlignment="Center"
+                                    Cursor="Hand"
+                                    HorizontalAlignment="Center"
+                                    Margin="3"
+                                    BorderThickness="5">
+                                <Label BorderThickness="0"
+                                       VerticalContentAlignment="Center"
+                                       Background="DarkGray"
+                                       HorizontalContentAlignment="Center"
+                                       Padding="8">
+                                    <Image Source="/Images/icons8-link-48 (1).png" 
+                               Stretch="Uniform"/>
+                                </Label>
                             </Border>
-
-                        </StackPanel>
-
-
-                    </StackPanel>
-                    <!-- Element 3-->
-                    <StackPanel Grid.Row="2" Orientation="Horizontal">
-                        <Border BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
-                        <Image   Source="/Images/female-teacher--v2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-
-                        <StackPanel Grid.Column="1">
-                            <Border BorderBrush="#244B6A"
-                                    BorderThickness="10"
-                                    CornerRadius="20">
-
-                                <TextBlock  
-                                       Text="................."
-                                       VerticalAlignment="Center"
-                                       Background="#244B6A"
-                                       Foreground="#FAFBFC"
-                                       FontWeight="Medium"
-                                       FontSize="35"
-                                       Padding="8"/>
-
+                            <Border Grid.Column="1" 
+                                    BorderBrush="DarkGray" 
+                                    CornerRadius="15" 
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Cursor="Hand"
+                                    Margin="3"
+                                    BorderThickness="5" >
+                                <Label BorderThickness="0"
+                                       VerticalContentAlignment="Center"
+                                       Background="DarkGray"
+                                       HorizontalContentAlignment="Center"
+                                       Padding="8">
+                                    <Image Source="/Images/smiling.png" 
+                                           Stretch="Uniform"/>
+                                </Label>
                             </Border>
-                            <Label Content="Typing..."
-                                   FontSize="35"
-                                   Foreground="DimGray"
-                                   FontWeight="Medium"
-                                   FontStyle="Italic"/>
-
-                        </StackPanel>
-
-                    </StackPanel>
-
-                </Grid>
-
-
-                <!-- +++ Send a message -->
-                <Border Grid.Row="2" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="6*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Border Grid.Column="0" 
-                            BorderBrush="DarkGray"
-                            CornerRadius="15" 
-                            VerticalAlignment="Center"
-                            Cursor="Hand"
-                            HorizontalAlignment="Center"
-                            Margin="3"
-                            BorderThickness="5">
-                        <Label BorderThickness="0"
-                            VerticalContentAlignment="Center"
-                            Background="DarkGray"
-                            HorizontalContentAlignment="Center"
-                            Padding="8">
-                            <Image Source="/Images/icons8-link-48 (1).png" 
+                            <TextBox Grid.Column="2"
+                                     Name="message"
+                                     BorderThickness="0"
+                                     Padding="4 0"  
+                                     Foreground="LightGray"
+                                     HorizontalContentAlignment="Left"
+                                     VerticalContentAlignment="Center"
+                                     Text="Type your message"
+                                     FontWeight="Light"
+                                     FontSize="30"/>
+                            <Button Grid.Column="3"
+                                    Cursor="Hand"
+                                    BorderThickness="0"
+                                    VerticalContentAlignment="Center"
+                                    Background="#B3C2CC"
+                                    HorizontalContentAlignment="Center"
+                                    Margin="4"
+                                    Padding="8">
+                                <Image Source="/Images/telegram-app--v3.png" 
                                Stretch="Uniform"/>
-                        </Label>
-                    </Border>
-                    <Border Grid.Column="1" 
-                            BorderBrush="DarkGray" 
-                            CornerRadius="15" 
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Center"
-                            Cursor="Hand"
-                            Margin="3"
-                            BorderThickness="5" >
-                        <Label BorderThickness="0"
-                            VerticalContentAlignment="Center"
-                            Background="DarkGray"
-                            HorizontalContentAlignment="Center"
-                            Padding="8">
-                            <Image Source="/Images/smiling.png" 
-                               Stretch="Uniform"/>
-                        </Label>
-                    </Border>
-                    <TextBox Grid.Column="2"
-                        Name="message"
-                        BorderThickness="0"
-                        Padding="4 0"  
-                        Foreground="LightGray"
-                        HorizontalContentAlignment="Left"
-                        VerticalContentAlignment="Center"
-                        Text="Type your message"
-                        FontWeight="Light"
-                        FontSize="30"/>
-                    <Button Grid.Column="3"
-                            Cursor="Hand"
-                            BorderThickness="0"
-                            VerticalContentAlignment="Center"
-                            Background="#B3C2CC"
-                            HorizontalContentAlignment="Center"
-                            Margin="4"
-                            Padding="8">
-                        <Image Source="/Images/telegram-app--v3.png" 
-                               Stretch="Uniform"/>
-                    </Button>
+                            </Button>
 
-                    <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
-                    <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
+                            <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
+                            <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
 
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
-            
         </Grid>
     </Grid>
 </Window>
