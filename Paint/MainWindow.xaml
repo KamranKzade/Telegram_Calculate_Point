@@ -68,7 +68,21 @@
             </Grid>
 
             <Grid Grid.Column="1" Background="Azure">
-                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" 
+                       Content="Select BackGround"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       VerticalContentAlignment="Bottom"
+                       HorizontalContentAlignment="Center"/>
+                <ComboBox Grid.Row="1"
+                          Margin="10"
+                          VerticalContentAlignment="Top"
+                          FontSize="16"/>
             </Grid>
 
         </Grid>
