@@ -100,6 +100,7 @@ public partial class MainWindow : Window
         try
         {
             txtbox.Text = new DataTable().Compute(txtbox.Text, null).ToString();
+           
         }
         catch (Exception ex)
         {
