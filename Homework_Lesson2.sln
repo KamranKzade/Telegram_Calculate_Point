@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telegram", "Homework_Lesson2\Telegram.csproj", "{B6B2398E-87EA-42DA-BBD4-23EB24AB9FF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{246C2F1F-EE1B-48BB-B1AA-EC42796D2840}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Calculator.csproj", "{246C2F1F-EE1B-48BB-B1AA-EC42796D2840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramWithUserControl", "TelegramWithUserControl\TelegramWithUserControl.csproj", "{44A49256-392F-4BFE-B0E2-E47D1EE564D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{246C2F1F-EE1B-48BB-B1AA-EC42796D2840}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{246C2F1F-EE1B-48BB-B1AA-EC42796D2840}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{246C2F1F-EE1B-48BB-B1AA-EC42796D2840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44A49256-392F-4BFE-B0E2-E47D1EE564D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A49256-392F-4BFE-B0E2-E47D1EE564D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A49256-392F-4BFE-B0E2-E47D1EE564D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A49256-392F-4BFE-B0E2-E47D1EE564D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

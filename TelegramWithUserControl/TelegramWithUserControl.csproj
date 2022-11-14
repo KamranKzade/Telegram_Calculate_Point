@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="alex.png" />
+    <None Remove="Elizabeth.png" />
+    <None Remove="Images\chevron-right.png" />
+    <None Remove="Images\expand-arrow.png" />
+    <None Remove="Images\external-delete-multimedia-kiranshastry-lineal-kiranshastry.png" />
+    <None Remove="Images\female-teacher--v2.png" />
+    <None Remove="Images\icons8-link-48 (1).png" />
+    <None Remove="Images\phone.png" />
+    <None Remove="Images\school-director-male-skin-type-1-2.png" />
+    <None Remove="Images\search.png" />
+    <None Remove="Images\smiling.png" />
+    <None Remove="Images\telegram-app--v3.png" />
+    <None Remove="jenifer.png" />
+    <None Remove="messi.png" />
+    <None Remove="qara.png" />
+    <None Remove="Qurban.png" />
+    <None Remove="ronaldo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\alex.png" />
+    <Resource Include="Images\Elizabeth.png" />
+    <Resource Include="Images\chevron-right.png" />
+    <Resource Include="Images\expand-arrow.png" />
+    <Resource Include="Images\external-delete-multimedia-kiranshastry-lineal-kiranshastry.png" />
+    <Resource Include="Images\female-teacher--v2.png" />
+    <Resource Include="Images\icons8-link-48 (1).png" />
+    <Resource Include="Images\phone.png" />
+    <Resource Include="Images\school-director-male-skin-type-1-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\smiling.png" />
+    <Resource Include="Images\telegram-app--v3.png" />
+    <Resource Include="Images\Qurban.png" />
+    <Resource Include="Images\qara.png" />
+    <Resource Include="Images\jenifer.png" />
+    <Resource Include="Images\messi.png" />
+    <Resource Include="Images\ronaldo.png" />
+  </ItemGroup>
+
+</Project>
