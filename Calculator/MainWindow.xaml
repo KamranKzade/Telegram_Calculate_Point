@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Calculator" Height="600" Width="400"
         WindowStartupLocation="CenterScreen" 
-        BorderBrush="Black"
-        BorderThickness="5"   
-        Icon="/Images/calculator.png"
         ResizeMode="NoResize"
+        BorderBrush="Black"
+        BorderThickness="5 0 5 5"   
+        Icon="/Images/calculator.png"
         WindowState="Normal">
     <Grid>
         <Grid >
@@ -19,7 +19,7 @@
                 <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
 
-            <!-- Title && M buttonlar -->
+            <!-- +++ Title && M buttonlar -->
             <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
@@ -28,7 +28,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Title -->
+                <!-- +++ Title -->
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -38,13 +38,11 @@
 
                     <!-- MenuBar -->
                     <Grid Grid.Column="0">
-                        <Button BorderThickness="0" Click="Button_Click"
+                        <Button BorderThickness="0"
+                                Click="Button_Click"
                                 Background="Transparent"
-                                VerticalContentAlignment="Center"
-                                VerticalAlignment="Center"
                                 Padding="3"
-                                HorizontalContentAlignment="Center"
-                                HorizontalAlignment="Center"
+                                Margin="2"
                                 Name="menubar">
                             <Image Source="/Images/menuba.png" 
                                    Stretch="Uniform"/>
@@ -57,13 +55,10 @@
                            FontWeight="Medium"
                            FontStyle="Normal"
                            FontSize="18"
-                           Margin="0 3"
+                           Margin="3"
+                           Padding="0"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           VerticalContentAlignment="Center"
-                           HorizontalContentAlignment="Center">
-
-                    </Label>
+                           HorizontalAlignment="Left"/>
 
                     <!-- History -->
                     <Grid Grid.Column="2">
@@ -71,24 +66,21 @@
                                 Click="Button_Click"
                                 Name="history"
                                 Background="Transparent"
-                                VerticalContentAlignment="Center"
-                                VerticalAlignment="Center"
-                                Padding="3"
-                                HorizontalContentAlignment="Center"
-                                HorizontalAlignment="Center">
+                                Margin="2"
+                                Padding="3">
                             <Image Source="/Images/icons8-history-48.png" 
                                    Stretch="Uniform"/>
                         </Button>
                     </Grid>
                 </Grid>
 
-                <!-- TextBox -->
+                <!-- +++ TextBox -->
                 <TextBox Grid.Row="1"
                          Name="txtbox"
-                         Text=""
+                         Text="0"
                          IsEnabled="False"
                          FontWeight="Medium"
-                         FontSize="26"
+                         FontSize="36"
                          VerticalContentAlignment="Bottom"
                          HorizontalContentAlignment="Right">
                     <TextBox.Background>
@@ -100,7 +92,7 @@
                     </TextBox.Background>
                 </TextBox>
 
-                <!-- M Buttons -->
+                <!-- +++ M Buttons -->
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions >
                         <ColumnDefinition Width="*"/>
@@ -112,7 +104,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Click="Button_Click"
-                            Name="mc"
+                        Name="mc"
                         HorizontalContentAlignment="Center"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
@@ -204,7 +196,9 @@
                 </Grid>
             </Grid>
 
-            <Grid Background="#FCFCFC" Grid.Row="1">
+            
+            <!-- +++ Symbols && Buttons && Numbers -->
+            <Grid  Grid.Row="1" Background="#FCFCFC">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -223,14 +217,16 @@
 
 
                 <!-- Symbols -->
-                <Button Click="Button_Click" Grid.Row="0" Grid.Column="0"
+                <Button Grid.Row="0" Grid.Column="0"
+                        Click="Button_Click"
                         Name="Faiz"
                         Background="#DBDBD7"
                         Padding="10"
                         BorderThickness="0">
                     <Image Source="/Images/icons8-percentage-48.png" Stretch="Uniform"/>
                 </Button>
-                <Button Grid.Row="0" Click="Button_Click" Grid.Column="1"
+                <Button Grid.Row="0" Grid.Column="1"
+                        Click="Button_Click" 
                         Name="CE"
                         Background="#DBDBD7"
                         Padding="10"
@@ -238,7 +234,8 @@
                     <Image Source="/Images/CE.png" Stretch="Uniform"/>
                 </Button>
                 <Button Grid.Row="0" Grid.Column="2"
-                        Name="C" Click="Button_Click"
+                        Name="C"
+                        Click="Button_Click"
                         Background="#DBDBD7"
                         Padding="12"
                         BorderThickness="0">
@@ -258,21 +255,19 @@
                         Click="Button_Click"
                         Background="#DBDBD7"
                         Padding="10"
-                        BorderThickness="0">
-                    <Label Content="1/x"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
+                        BorderThickness="0"
+                        Content="1/x"
+                        FontSize="25"
+                        FontWeight="Medium"/>
                 <Button Grid.Row="1" Grid.Column="1"
+                        Content="x2"
                         Name="quvvet"
-                        Click="Button_Click"
                         Background="#DBDBD7"
                         Padding="12"
-                        BorderThickness="0">
-                    <Label Content="x2"
-                           FontSize="25"
-                           FontWeight="Medium"/>
-                </Button>
+                        BorderThickness="0"
+                        FontSize="25"
+                        Click="Button_Click"
+                        FontWeight="Medium"/>
                 <Button Grid.Row="1" Grid.Column="2"
                         Name="kok"
                         Click="Button_Click"
@@ -283,10 +278,11 @@
                 </Button>
 
 
-                <!-- Riyazi hesablamalar -->
+                <!-- +++ Riyazi hesablamalar -->
                 <Button Grid.Row="1" Grid.Column="3"
                         Click="Button_Click"
                         Background="#DBDBD7"
+                        Padding="3"
                         FontSize="40"
                         FontWeight="Medium"
                         VerticalContentAlignment="Center"
@@ -301,6 +297,7 @@
                         FontWeight="Medium"
                         VerticalContentAlignment="Center"
                         HorizontalContentAlignment="Center"
+                        Padding="10"
                         Content="*"
                         BorderThickness="0">
                 </Button>
@@ -309,9 +306,8 @@
                         Background="#DBDBD7"
                         Content="-"
                         FontSize="40"
-                        FontWeight="Medium"                       
-                        VerticalContentAlignment="Center"
-                        HorizontalContentAlignment="Center"
+                        FontWeight="Medium"
+                        Padding="1"
                         BorderThickness="0"/>
                 <Button Grid.Row="4" Grid.Column="3"
                         Click="Button_Click"
@@ -319,12 +315,10 @@
                         Content="+"
                         FontSize="40"
                         FontWeight="Medium"                       
-                        VerticalContentAlignment="Center"
-                        HorizontalContentAlignment="Center"
                         BorderThickness="0"/>
                 <Button Grid.Row="5" Grid.Column="3"
                         Click="Button_Click_1"
-                        Background="#DBDBD7"
+                        Background="#3AAFB9"
                         Content="="
                         FontSize="40"
                         FontWeight="Medium"                       
@@ -341,7 +335,7 @@
                 </Button>
                 <Button Grid.Row="5" Grid.Column="2"
                          Click="Button_Click"
-                        Background="#DBDBD7"
+                        Background="Transparent"
                         Content="."
                         FontSize="40"
                         FontWeight="Medium"                       
@@ -350,70 +344,82 @@
                         BorderThickness="0"/>
 
 
-                <!-- Reqemler -->
+                <!-- +++ Reqemler -->
 
-                <Button Click="Button_Click" Grid.Row="2" Grid.Column="0"
+                <Button Grid.Row="2" Grid.Column="0"
+                        Click="Button_Click"
                         Background="Transparent"
                         Padding="12"
-                        BorderThickness="0" Content="7"
+                        BorderThickness="0" 
+                        Content="7"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click" Grid.Row="2" Grid.Column="1"
+                <Button Grid.Row="2" Grid.Column="1"
+                        Click="Button_Click" 
                         Background="Transparent"
                         Padding="12"
-                        BorderThickness="0" Content="8"
+                        BorderThickness="0" 
+                        Content="8"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click"  Grid.Row="2" Grid.Column="2"
+                <Button Grid.Row="2" Grid.Column="2"
+                        Click="Button_Click"  
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0" 
                         Content="9"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click"  Grid.Row="3" Grid.Column="0"
+                <Button Grid.Row="3" Grid.Column="0"
+                        Click="Button_Click"  
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0" 
                         Content="4"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click"  Grid.Row="3" Grid.Column="1"
+                <Button Grid.Row="3" Grid.Column="1"
+                        Click="Button_Click"  
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0" 
                         Content="5"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click"  Grid.Row="3" Grid.Column="2"
+                <Button Grid.Row="3" Grid.Column="2"
+                        Click="Button_Click"  
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0"
                         Content="6"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click"  Grid.Row="4" Grid.Column="0"
+                <Button Grid.Row="4" Grid.Column="0"
+                        Click="Button_Click" 
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0" 
                         Content="1"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click"  Grid.Row="4" Grid.Column="1"
+                <Button Grid.Row="4" Grid.Column="1"
+                        Click="Button_Click" 
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0"
                         Content="2"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click"  Grid.Row="4" Grid.Column="2"
+                <Button Grid.Row="4" Grid.Column="2"
+                        Click="Button_Click" 
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0"
                         Content="3"
                         FontSize="25"
                         FontWeight="Medium"/>
-                <Button Click="Button_Click"  Grid.Row="5" Grid.Column="1"
+                <Button Grid.Row="5" Grid.Column="1"
+                        Click="Button_Click" 
                         Background="Transparent"
                         Padding="12"
                         BorderThickness="0"
@@ -424,7 +430,7 @@
                 </Button>
 
 
-                <!-- Borderler -->
+                <!-- +++ Borderler -->
                 <Border Grid.Row="0" Grid.Column="0"
                         BorderBrush="DimGray" 
                         BorderThickness="0 0 2 2"/>
@@ -500,6 +506,5 @@
 
             </Grid>
         </Grid>
-
     </Grid>
 </Window>

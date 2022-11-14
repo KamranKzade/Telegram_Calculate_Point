@@ -86,6 +86,10 @@ public partial class MainWindow : Window
             
             
             default:
+                if (txtbox.Text == "0" || txtbox.Text == "0.0")
+                {
+                    txtbox.Text = string.Empty;
+                }
                 txtbox.Text += btn?.Content.ToString();
                 break;
         }
