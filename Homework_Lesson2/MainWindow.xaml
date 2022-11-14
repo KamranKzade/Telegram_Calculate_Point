@@ -5,14 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework_Lesson2"
         mc:Ignorable="d"
-        Title="Telegram" Icon="/telegram-app--v3.png"
+        Title="Telegram" 
+        Icon="/Images/telegram-app--v3.png"
         Height="700"
         WindowStartupLocation="CenterScreen"
-        MaxWidth="900"
-        MinWidth="700"
-        MaxHeight="800"
-        MinHeight="600"
-         BorderBrush="DeepSkyBlue"
+        ResizeMode="NoResize"
+        BorderBrush="DeepSkyBlue"
         BorderThickness="2"
         Width="800">
     <Grid>
@@ -28,72 +26,64 @@
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
 
-            <!-- Telegram yazisi -->
-            <Border BorderBrush="Gray" BorderThickness=" 0 0 0 2">
-                <Grid  >
-                    <Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="2*"/>
-                            </Grid.ColumnDefinitions>
+            <!-- +++ Telegram yazisi -->
+            <Border BorderBrush="Gray" BorderThickness=" 0 0 0 2"/>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
 
-                            <Image Source="/telegram-app--v3.png" Stretch="Uniform"/>
+                <Image Source="/Images/telegram-app--v3.png" Stretch="Uniform"/>
 
-                            <Label Grid.Column="1"
-                               Content="Telegram"
-                               FontSize="26"
-                               FontWeight="Bold" 
-                               FontFamily="Arial"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"></Label>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Border>
+                <Label Grid.Column="1"
+                           Content="Telegram"
+                           FontSize="26"
+                           FontWeight="Bold" 
+                           FontFamily="Arial"
+                           HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center"/>
+            </Grid>
 
-            <!-- Ad Expander iconu -->
-            <Border BorderBrush="Gray" Grid.Column="1" BorderThickness="0 0 0 2">
-                <Grid  >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="1.8*"/>
-                            <ColumnDefinition Width="0.4*"/>
-                        </Grid.ColumnDefinitions>
 
-                        <Grid  Grid.Column="2">
-                            <Label HorizontalContentAlignment="Center"
+            <!-- +++ Name &&  Expander iconu -->
+            <Border BorderBrush="Gray" Grid.Column="1" BorderThickness="0 0 0 2"/>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Expander -->
+                <Label Grid.Column="1" HorizontalContentAlignment="Center"
                                VerticalContentAlignment="Center"
                                Padding="12">
-                                <Image HorizontalAlignment="Center"
+                    <Image     HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Stretch="Uniform"
-                               Source="/expand-arrow.png"></Image>
-                            </Label>
-                        </Grid>
+                               Source="/expand-arrow.png"/>
+                </Label>
 
-                        <Grid Grid.Column="1">
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="2*"/>
-                            </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Grid.Column="0">
+                    <!-- VM  -->
+                    <Border Grid.Column="0"
+                            BorderBrush="WhiteSmoke"
+                            BorderThickness="1"
+                            CornerRadius="25"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right">
+                        <Border.Background>
+                            <LinearGradientBrush >
+                                <GradientStop Color="ForestGreen" Offset="0"></GradientStop>
+                                <GradientStop Color="Yellow" Offset="0"></GradientStop>
+                                <GradientStop Color="Blue" Offset="1"></GradientStop>
+                            </LinearGradientBrush>
+                        </Border.Background>
 
-                            <Border BorderBrush="WhiteSmoke"
-                                BorderThickness="1"
-                                CornerRadius="25"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center">
-                                <Border.Background>
-                                    <LinearGradientBrush >
-                                        <GradientStop Color="ForestGreen" Offset="0"></GradientStop>
-                                        <GradientStop Color="Yellow" Offset="0"></GradientStop>
-                                        <GradientStop Color="Blue" Offset="1"></GradientStop>
-                                    </LinearGradientBrush>
-                                </Border.Background>
-
-                                <Label
+                        <Label
                                 Margin="5 0 5 0"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
@@ -105,47 +95,40 @@
                                 VerticalContentAlignment="Center"
                                 Background="Transparent"
                                 Content="VM"/>
-                            </Border>
+                    </Border>
 
-                            <Label Grid.Column="1" 
-                               Content="Vitaly Medvedev"
-                               FontSize="14"
-                               FontWeight="Medium"
-                               Foreground="#44637C"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"/>
+                    <!-- Name -->
+                    <Label Grid.Column="1" 
+                           Content="Vitaly Medvedev"
+                           FontSize="14"
+                           FontWeight="Medium"
+                           Foreground="#44637C"
+                           HorizontalContentAlignment="Right"
+                           VerticalContentAlignment="Center"/>
 
-                        </Grid>
-
-
-
-                    </Grid>
-                </Grid>
-            </Border>
-
-            <!-- Search -->
-            <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0 0 2 2 ">
-                <Grid Grid.Row="1"
-                  Background="Transparent">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
+                </StackPanel>
+            </Grid>
 
 
-                    <Grid>
-                        <Label VerticalContentAlignment="Center" 
+
+
+            <!-- +++ Search -->
+            <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0 0 2 2 "/>
+            <StackPanel Grid.Row="1" Grid.Column="0"
+                  Background="Transparent"
+                  Orientation="Horizontal">
+
+                <Label VerticalContentAlignment="Center" 
                            HorizontalContentAlignment="Center">
-                            <Image Stretch="Uniform"
-                               Source="/search.png"/>
-                        </Label>
-                    </Grid>
+                    <Image Stretch="Uniform"
+                               Source="/Images/search.png"/>
+                </Label>
 
-                    <Grid Grid.Column="1">
-                        <TextBox
+                <TextBox Grid.Column="1"
                         Name="search"
                         BorderThickness="0"
                         Padding="4 0"  
+                        Margin="0 4"
                         Foreground="LightGray"
                         HorizontalContentAlignment="Left"
                         VerticalContentAlignment="Center"
@@ -153,14 +136,13 @@
                         FontWeight="Medium"
                         FontSize="30">
 
-                        </TextBox>
-                    </Grid>
-                </Grid>
+                </TextBox>
+            </StackPanel>
 
-            </Border>
 
-            <!-- Resent && All Contacts -->
-            <Grid Grid.Row="2">
+
+            <!-- recentin ici Resent && All Contacts -->
+            <Grid Grid.Row="2" Grid.Column="0">
                 <Grid.RowDefinitions >
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="6*"/>
@@ -168,34 +150,31 @@
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Resent -->
+                <!-- +++ Resent -->
                 <Border Grid.Row="0" BorderBrush="DimGray" BorderThickness="0 0 2 2"/>
-                <Grid>
+                <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Content="Resent"
+                    <Label Grid.Column="0"
+                           Content="Resent"
                            VerticalContentAlignment="Center"
                            HorizontalContentAlignment="Left"
                            Padding="10 0"
                            FontSize="25"
                            FontWeight="Medium"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"
                            Foreground="SlateGray"/>
 
-                    <Label Grid.Column="1"
-                           Padding="12">
-                        <Image Source="/expand-arrow.png" 
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                               Stretch="Uniform"></Image>
-                    </Label>
+                    <Image Grid.Column="1"
+                           Margin="0 4 5 4"
+                           Source="/Images/expand-arrow.png" 
+                           Stretch="Uniform"/>
                 </Grid>
 
-                <!-- Resent in icerisi -->
+
+                <!-- +++ Resent in icerisi -->
                 <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 0 2 2"/>
                 <Grid Grid.Row="1" Background="#E0E7EB">
                     <Grid.RowDefinitions>
@@ -214,288 +193,184 @@
                         <ColumnDefinition Width="1.5*"/>
                     </Grid.ColumnDefinitions>
 
+                    <!-- Border -->
                     <Border  Grid.Row="0" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="0" Grid.Column="1" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="0" Grid.Column="2" BorderBrush="DimGray" BorderThickness=" 0 0 2 2"/>
-
-
-
 
                     <Border  Grid.Row="2" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="2" Grid.Column="1" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="2" Grid.Column="2" BorderBrush="DimGray" BorderThickness=" 0 0 2 2"/>
 
-
                     <Border  Grid.Row="3" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="3" Grid.Column="1" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="3" Grid.Column="2" BorderBrush="DimGray" BorderThickness=" 0 0 2 2"/>
-
 
                     <Border  Grid.Row="4" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="4" Grid.Column="1" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="4" Grid.Column="2" BorderBrush="DimGray" BorderThickness=" 0 0 2 2"/>
 
-
                     <Border  Grid.Row="5" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="5" Grid.Column="1" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="5" Grid.Column="2" BorderBrush="DimGray" BorderThickness=" 0 0 2 2"/>
-
 
                     <Border  Grid.Row="6" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="6" Grid.Column="1" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="6" Grid.Column="2" BorderBrush="DimGray" BorderThickness=" 0 0 2 2"/>
 
-                    <!-- Images -->
-                    <Grid Grid.Row="0" Grid.Column="0">
-                        <Label>
-                            <Image Source="/female-teacher--v2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                        </Label>
-                    </Grid>
+                    <!-- +++ Images -->
+
+                    <Image Source="/Images/female-teacher--v2.png"
+                           Grid.Row="0" Grid.Column="0"
+                           Stretch="Uniform"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
                     <Grid Background="#B3C2CC" Grid.Row="1" Grid.Column="0">
-                        <Label>
-                            <Image Source="/female-teacher--v2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                        </Label>
+                        <Image Source="/Images/female-teacher--v2.png"
+                               Stretch="Uniform"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
                     </Grid>
-                    <Grid Grid.Row="2" Grid.Column="0">
-                        <Label>
-                            <Image Source="/school-director-male-skin-type-1-2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                        </Label>
-                    </Grid>
-                    <Grid Grid.Row="3" Grid.Column="0">
-                        <Label>
-                            <Image Source="/school-director-male-skin-type-1-2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                        </Label>
-                    </Grid>
-                    <Grid Grid.Row="4" Grid.Column="0">
-                        <Label>
-                            <Image Source="/school-director-male-skin-type-1-2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                        </Label>
-                    </Grid>
-                    <Grid Grid.Row="5" Grid.Column="0">
-                        <Label>
-                            <Image Source="/female-teacher--v2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                        </Label>
-                    </Grid>
-                    <Grid Grid.Row="6" Grid.Column="0">
-                        <Label>
-                            <Image Source="/female-teacher--v2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                        </Label>
-                    </Grid>
+                    <Image Source="/Images/school-director-male-skin-type-1-2.png"
+                           Grid.Row="2" Grid.Column="0"
+                           Stretch="Uniform"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                    <Image Source="/Images/school-director-male-skin-type-1-2.png"
+                           Stretch="Uniform"
+                           Grid.Row="3" Grid.Column="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                    <Image Source="/Images/school-director-male-skin-type-1-2.png"
+                           Stretch="Uniform"
+                           Grid.Row="4" Grid.Column="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                    <Image Source="/Images/female-teacher--v2.png"
+                           Stretch="Uniform"
+                           Grid.Row="5" Grid.Column="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                    <Image Source="/Images/female-teacher--v2.png"
+                           Grid.Row="6" Grid.Column="0"
+                           Stretch="Uniform"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
 
-                    <!-- Name && Message -->
-                    <Grid Grid.Row="0" Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
 
-                        <Grid Grid.Row="0">
-                            <Label Content="Alisha Porshe"
-                                   FontSize="12"
-                                   Padding="0 0 0 5"
-                                   FontWeight="ExtraBold"
-                                   Foreground="DimGray"></Label>
-                        </Grid>
-
-                        <Grid Grid.Row="1"  
-                              HorizontalAlignment="Left">
-                            <Label Content="Hi, help me pls"
-                                   FontSize="14"
-                                   Foreground="SlateGray"
-                                   FontWeight="Medium"
-                                   Padding="5 0 0 0"
-                                   />
-                        </Grid>
-                    </Grid>
-                    <Grid Background="#B3C2CC" Grid.Row="1" Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0">
-                            <Label Content="Lovely Girl"
-                                   FontSize="12"
-                                   Padding="0 0 0 5"
-                                   FontWeight="ExtraBold"
-                                   Foreground="DimGray"></Label>
-                        </Grid>
-
-                        <Grid Grid.Row="1"  
-                              HorizontalAlignment="Left">
-                            <Label Content="Typing...."
-                                   FontSize="14"
-                                   Foreground="SlateGray"
-                                   FontWeight="Medium"
-                                   Padding="5 0 0 0"
-                                   />
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="2" Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0">
-                            <Label Content="Michael Hasse"
+                    <!-- +++  Name && Message -->
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <Label Content="Alisha Porshe"
+                               FontSize="12"
+                               Padding="0 0 0 5"
+                               FontWeight="ExtraBold"
+                               Foreground="DimGray"/>
+                        <Label Content="Hi, help me pls"
+                               HorizontalAlignment="Left"
+                               FontSize="14"
+                               Foreground="SlateGray"
+                               FontWeight="Medium"
+                               Padding="5 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Background="#B3C2CC" Grid.Row="1" Grid.Column="1">
+                        <Label Content="Lovely Girl"
+                               FontSize="12"
+                               Padding="0 0 0 5"
+                               FontWeight="ExtraBold"
+                               Foreground="DimGray"/>
+                        <Label Content="Typing...."
+                               FontSize="14"
+                               HorizontalAlignment="Left"
+                               Foreground="SlateGray"
+                               FontWeight="Medium"
+                               Padding="5 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1">
+                        <Label Grid.Row="0"
+                                   Content="Michael Hasse"
                                    VerticalContentAlignment="Center"
                                    HorizontalContentAlignment="Left"
                                    FontSize="12"
                                    Padding="0 0 0 5"
                                    FontWeight="ExtraBold"
-                                   Foreground="DimGray"></Label>
-                        </Grid>
-
-                        <Grid Grid.Row="1"  
-                              HorizontalAlignment="Left">
-                            <Label Content="Hi, help me pls"
+                                   Foreground="DimGray"/>
+                        <Label Content="Hi, help me pls"
+                                   Grid.Row="1"  
+                                   HorizontalAlignment="Left"
                                    FontSize="14"
                                    Foreground="SlateGray"
                                    FontWeight="Medium"
                                    Padding="5 0 0 0"
                                    />
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="3" Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="1">
+                        <Label Content="Robert De Niro"
+                               FontSize="12"
+                               Padding="0 0 0 5"
+                               FontWeight="ExtraBold"
+                               Foreground="DimGray"/>
+                        <Label Content="I'm happy man what u love it..."
+                               HorizontalAlignment="Left"
+                               FontSize="7"
+                               Foreground="SlateGray"
+                               FontWeight="Medium"
+                               Padding="5 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="1">
+                        <Label Content="Alex Tessla"
+                               FontSize="12"
+                               Padding="0 0 0 5"
+                               FontWeight="ExtraBold"
+                               Foreground="DimGray"/>
+                        <Label Content="Typing...."
+                               HorizontalAlignment="Left"
+                               FontSize="14"
+                               Foreground="SlateGray"
+                               FontWeight="Medium"
+                               Padding="5 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5" Grid.Column="1">
+                        <Label Content="Leticia Lower"
+                               FontSize="12"
+                               Padding="0 0 0 5"
+                               FontWeight="ExtraBold"
+                               Foreground="DimGray"/>
+                        <Label Content="Of course mate"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="SlateGray"
+                               FontWeight="Medium"
+                               Padding="5 0 0 2"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6" Grid.Column="1">
+                        <Label Content="Elena Cooper"
+                               FontSize="12"
+                               Padding="0 0 0 5"
+                               FontWeight="ExtraBold"
+                               Foreground="DimGray"/>
+                        <Label Content="Ok, I will be there"
+                               HorizontalAlignment="Left"
+                               FontSize="12"
+                               Foreground="SlateGray"
+                               FontWeight="Medium"
+                               Padding="5 0 0 0"/>
+                    </StackPanel>
 
-                        <Grid Grid.Row="0">
-                            <Label Content="Robert De Niro"
-                                   FontSize="12"
-                                   Padding="0 0 0 5"
-                                   FontWeight="ExtraBold"
-                                   Foreground="DimGray"></Label>
-                        </Grid>
-
-                        <Grid Grid.Row="1"  
-                              HorizontalAlignment="Left">
-                            <Label Content="I'm happy man what u love it..."
-                                   FontSize="7"
-                                   Foreground="SlateGray"
-                                   FontWeight="Medium"
-                                   Padding="5 0 0 0"
-                                   />
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="4" Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0">
-                            <Label Content="Alex Tessla"
-                                   FontSize="12"
-                                   Padding="0 0 0 5"
-                                   FontWeight="ExtraBold"
-                                   Foreground="DimGray"></Label>
-                        </Grid>
-
-                        <Grid Grid.Row="1"
-                              HorizontalAlignment="Left">
-                            <Label Content="Typing...."
-                                   FontSize="14"
-                                   Foreground="SlateGray"
-                                   FontWeight="Medium"
-                                   Padding="5 0 0 0"
-                                   />
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="5" Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0">
-                            <Label Content="Leticia Lower"
-                                   FontSize="12"
-                                   Padding="0 0 0 5"
-                                   FontWeight="ExtraBold"
-                                   Foreground="DimGray"></Label>
-                        </Grid>
-
-                        <Grid Grid.Row="1"
-                              HorizontalAlignment="Left">
-                            <Label Content="Of course mate"
-                                   FontSize="12"
-                                   Foreground="SlateGray"
-                                   FontWeight="Medium"
-                                   Padding="5 0 0 2"
-                                   />
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="6" Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0">
-                            <Label Content="Elena Cooper"
-                                   FontSize="12"
-                                   Padding="0 0 0 5"
-                                   FontWeight="ExtraBold"
-                                   Foreground="DimGray"></Label>
-                        </Grid>
-
-                        <Grid Grid.Row="1"  
-                              HorizontalAlignment="Left">
-                            <Label Content="Ok, I will be there"
-                                   FontSize="12"
-                                   Foreground="SlateGray"
-                                   FontWeight="Medium"
-                                   Padding="5 0 0 0"
-                                   />
-                        </Grid>
-                    </Grid>
-
-                    <!-- Time && message -->
-                    <Grid Grid.Row="0" Grid.Column="2">
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
+                    <!-- +++ Time && message -->
+                    <StackPanel Grid.Row="0" Grid.Column="2">
                         <Label Content="01:30 AM"
                                FontSize="10"
                                Foreground="SlateGray"
                                FontWeight="Medium"
-                               Padding="5 0 0 0"
+                               Padding="5 0 5 0"
                                HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
+                               VerticalContentAlignment="Center"/>
 
                         <Border CornerRadius="5"
                                 Grid.Row="1"
                                 Margin="0 0 5 5"
                                 Padding="0 0 5 0"
-                                VerticalAlignment="Center"
+                                VerticalAlignment="Bottom"
                                 Background="Red"
                                 HorizontalAlignment="Right">
 
@@ -506,73 +381,46 @@
                                Foreground="WhiteSmoke"
                                FontWeight="Medium"
                                Margin="2"
-                               Padding="5 0 0 0"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
+                               Padding="5 0 5 0"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"/>
                         </Border>
 
 
-                    </Grid>
-                    <Grid Background="#B3C2CC" Grid.Row="1" Grid.Column="2">
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                    </StackPanel>
+                    <Label Grid.Row="1" Grid.Column="2"
+                           Background="#B3C2CC" 
+                           Content="01:30 AM"
+                           FontSize="10"
+                           Foreground="SlateGray"
+                           FontWeight="Medium"
+                           Padding="5 0 0 20"
 
+                          />
+                    <Label Grid.Row="2" Grid.Column="2"
+                           Content="01:30 AM"
+                           FontSize="10"
+                           Foreground="SlateGray"
+                           FontWeight="Medium"
+                           Padding="0 0 5 0"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Top" />
+                    <Label Grid.Row="3" Grid.Column="2"
+                           Content="01:30 AM"
+                           FontSize="10"
+                           Foreground="SlateGray"
+                           FontWeight="Medium"
+                           Padding="0 0 5 0"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Top"/>
+                    <StackPanel Grid.Row="4" Grid.Column="2">
                         <Label Content="01:30 AM"
                                FontSize="10"
                                Foreground="SlateGray"
                                FontWeight="Medium"
-                               Padding="5 0 0 0"
+                               Padding="5 0 5 0"
                                HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
-                    </Grid>
-                    <Grid Grid.Row="2" Grid.Column="2">
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Label Content="01:30 AM"
-                               FontSize="10"
-                               Foreground="SlateGray"
-                               FontWeight="Medium"
-                               Padding="5 0 0 0"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
-                    </Grid>
-                    <Grid Grid.Row="3" Grid.Column="2">
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Label Content="01:30 AM"
-                               FontSize="10"
-                               Foreground="SlateGray"
-                               FontWeight="Medium"
-                               Padding="5 0 0 0"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
-                    </Grid>
-                    <Grid Grid.Row="4" Grid.Column="2">
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Label Content="01:30 AM"
-                               FontSize="10"
-                               Foreground="SlateGray"
-                               FontWeight="Medium"
-                               Padding="5 0 0 0"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
+                               VerticalContentAlignment="Center"/>
 
                         <Border CornerRadius="5"
                                 Grid.Row="1"
@@ -581,7 +429,6 @@
                                 VerticalAlignment="Center"
                                 Background="Red"
                                 HorizontalAlignment="Right">
-
                             <Label 
                                Content="2"
                                FontSize="8"
@@ -591,86 +438,67 @@
                                Margin="2"
                                Padding="5 0 0 0"
                                HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
+                               VerticalContentAlignment="Center" />
                         </Border>
 
 
-                    </Grid>
-                    <Grid Grid.Row="5" Grid.Column="2">
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Label Content="01:30 AM"
-                               FontSize="10"
-                               Foreground="SlateGray"
-                               FontWeight="Medium"
-                               Padding="5 0 0 0"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
-                    </Grid>
-                    <Grid Grid.Row="6" Grid.Column="2">
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Label Content="01:30 AM"
-                               FontSize="10"
-                               Foreground="SlateGray"
-                               FontWeight="Medium"
-                               Padding="5 0 0 0"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                                   />
-                    </Grid>
-
+                    </StackPanel>
+                    <Label Grid.Row="5" Grid.Column="2"
+                           Content="01:30 AM"
+                           FontSize="10"
+                           Foreground="SlateGray"
+                           FontWeight="Medium"
+                           Padding="0 0 5 0"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Top"/>
+                    <Label Grid.Row="6" Grid.Column="2"
+                           Content="01:30 AM"
+                           FontSize="10"
+                           Foreground="SlateGray"
+                           FontWeight="Medium"
+                           Padding="0 0 5 0"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Top"/>
 
                     <Border  Grid.Row="1" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="1" Grid.Column="1" BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
                     <Border  Grid.Row="1" Grid.Column="2" BorderBrush="DimGray" BorderThickness=" 0 0 2 2"/>
                 </Grid>
 
-                <!-- All Contacts -->
+                <!-- +++ All Contacts -->
                 <Border Grid.Row="2" BorderBrush="DimGray" BorderThickness="0 0 2 2"/>
-                <Grid Grid.Row="2">
+                <Grid  Grid.Row="2" Background="Transparent">
                     <Grid.ColumnDefinitions >
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Grid VerticalAlignment="Center" 
-                          HorizontalAlignment="Left">
-                        <Label Content="All contacts"
-                               Foreground="DimGray"
-                               FontSize="20"
-                               Padding="5 0 0 0"
-                               FontWeight="DemiBold"/>
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <Label VerticalContentAlignment="Center"
-                               HorizontalContentAlignment="Center"
-                               HorizontalAlignment="Center"
-                               Padding="12"
-                               VerticalAlignment="Center">
-                            <Image VerticalAlignment="Center"
+                    <Label Grid.Column="0" 
+                           Content="All contacts"
+                           VerticalContentAlignment="Center"
+                           Foreground="DimGray"
+                           FontSize="20"
+                           Padding="5 0 0 0"
+                           FontWeight="DemiBold"/>
+
+                    <Label Grid.Column="1" 
+                           Padding="16"
+                           Margin="0 5 0 0">
+                        <Image VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Source="/chevron-right.png" 
+                                   Source="/Images/chevron-right.png" 
                                    Stretch="Uniform"/>
-
-
-                        </Label>
-                    </Grid>
+                    </Label>
 
                 </Grid>
 
+                <!-- +++ Bosluq -->
                 <Border Grid.Row="3" BorderBrush="DimGray" BorderThickness="0 0 2 0"/>
+
             </Grid>
 
-            <!-- RecycleBin && Call -->
+
+            <!-- ++++ RecycleBin && Call -->
             <Grid Grid.Row="1" Grid.Column="1" Background="#E0E7EB">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*"/>
@@ -680,16 +508,13 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Grid Grid.Column="0">
-                    <Label>
-                        <Image Source="/female-teacher--v2.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                    </Label>
-                </Grid>
-                <Grid Grid.Column="1">
-                    <Label Content="Lovely Girl"
+                <Image Grid.Column="0"
+                       Source="/Images/female-teacher--v2.png"
+                       Stretch="Uniform"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+                <Label  Grid.Column="1"
+                        Content="Lovely Girl"
                         Padding="4 0"  
                         Foreground="DimGray"
                         HorizontalContentAlignment="Left"
@@ -697,33 +522,39 @@
                         FontWeight="Medium"
                         FontSize="30"
                            />
-                </Grid>
-                <Grid Grid.Column="2">
-                    <Button Background="Transparent"
-                            BorderThickness="0"
-                            Padding="10">
-                        <Image Source="/external-delete-multimedia-kiranshastry-lineal-kiranshastry.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                    </Button>
-                </Grid>
-                <Grid Grid.Column="3">
-                    <Button Padding="10"
-                            BorderThickness="0"
-                            Background="Transparent">
-                        <Image Source="/phone.png"
-                                   Stretch="Uniform"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-                    </Button>
-                </Grid>
+                <Button Grid.Column="2"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Padding="10">
+                    <Image Source="/Images/external-delete-multimedia-kiranshastry-lineal-kiranshastry.png"
+                           Stretch="Uniform"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                </Button>
+                <Button Grid.Column="3"
+                        Padding="10"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Background="Transparent">
+                    <Image Source="/Images/phone.png"
+                           Stretch="Uniform"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                </Button>
+
 
                 <Border Grid.Column="0" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
                 <Border Grid.Column="1" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
                 <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
                 <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
             </Grid>
+
+
+
+
+
+
 
             <!-- Message Part -->
             <Grid Grid.Column="1" Grid.Row="2" >
@@ -732,50 +563,64 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Message with Image ( Time ) -->
+                <!-- +++ Message with Image ( Time ) -->
                 <Grid Grid.Row="0">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="5*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label VerticalAlignment="Center"
-                                   HorizontalAlignment="Center">
-                                <Image Source="/female-teacher--v2.png"
+                    <!-- Element 1-->
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <Label VerticalAlignment="Center"
+                               HorizontalAlignment="Center">
+                            <Image Source="/Images/female-teacher--v2.png"
                                    Stretch="Uniform"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"/>
-                            </Label>
+                        </Label>
 
-                            <Grid Grid.Column="1">
-                                <Grid.RowDefinitions >
-                                    <RowDefinition Height="3*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-
-                                <Border Grid.Column="1"
-                                    BorderBrush="#244B6A"
+                        <StackPanel>
+                            <Border BorderBrush="#244B6A"
                                     BorderThickness="10"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Center"
                                     CornerRadius="20">
+                                <TextBlock Background="#244B6A"
+                                           Foreground="#FAFBFC"
+                                           FontWeight="Medium"
+                                           FontSize="16"
+                                           Padding="15">
+                                  Business processes, circuit diagrams and sewing <LineBreak/>
+                                  Design hass different connottations in different fields
+                                </TextBlock>
+                            </Border>
+                            <Label Content="1 Min"
+                                   Foreground="LightGray"
+                                   FontSize="18"
+                                   FontWeight="Medium"
+                                   Margin="5 0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <!-- Element 2-->
+                    <StackPanel Grid.Row="1" >
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <StackPanel>
+                                <Border Grid.Column="0"
+                                        BorderBrush="#244B6A"
+                                        BorderThickness="10"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        CornerRadius="20">
 
                                     <TextBlock  HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       Background="#244B6A"
-                                       Foreground="#FAFBFC"
-                                       FontWeight="Medium"
-                                       FontSize="16"
-                                       Padding="15">
-                                  Business processes, circuit diagrams and sewing <LineBreak/> Design hass different connottations in different fields
+                                                VerticalAlignment="Center"
+                                                Background="#244B6A"
+                                                Foreground="#FAFBFC"
+                                                FontWeight="Medium"
+                                                FontSize="16"
+                                                Padding="15">
+                                                Business processes, circuit diagrams and sewing <LineBreak/>
+                                                Design hass different connottations in different fields
                                     </TextBlock>
                                 </Border>
                                 <Label Grid.Row="1"
@@ -783,57 +628,15 @@
                                        Foreground="LightGray"
                                        FontSize="18"
                                        FontWeight="Medium"
-                                       VerticalContentAlignment="Center"
-                                       HorizontalContentAlignment="Left"
-                                       Margin="5 0"/>
-                            </Grid>
-                        </Grid>
-
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="5*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid Grid.Column="0" >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-
-                                <Label Grid.Row="1"
-                                       Content="1 Min"
-                                       Foreground="LightGray"
-                                       FontSize="18"
-                                       FontWeight="Medium"
-                                       VerticalContentAlignment="Center"
                                        HorizontalContentAlignment="Right"
                                        Margin="10 0"/>
+                            </StackPanel>
 
-                                <Border Grid.Column="0"
-                                    BorderBrush="#244B6A"
-                                    BorderThickness="10"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Center"
-                                    CornerRadius="20">
-
-                                    <TextBlock  HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       Background="#244B6A"
-                                       Foreground="#FAFBFC"
-                                       FontWeight="Medium"
-                                       FontSize="16"
-                                       Padding="15">
-                                  Business processes, circuit diagrams and sewing <LineBreak/> Design hass different connottations in different fields
-                                    </TextBlock>
-                                </Border>
-                            </Grid>
-
-                            <Border Grid.Column="1" BorderBrush="WhiteSmoke"
-                                BorderThickness="5"
-                                CornerRadius="25"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Right">
+                            <Border  BorderBrush="WhiteSmoke"
+                                     BorderThickness="5"
+                                     CornerRadius="100"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Right">
                                 <Border.Background>
                                     <LinearGradientBrush >
                                         <GradientStop Color="ForestGreen" Offset="0"></GradientStop>
@@ -856,38 +659,25 @@
                                 Content="VM"/>
                             </Border>
 
-                        </Grid>
+                        </StackPanel>
 
-                        <Grid Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="5*"/>
-                            </Grid.ColumnDefinitions>
 
-                            <Border BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
-                            <Label VerticalAlignment="Center"
-                                   HorizontalAlignment="Center">
-                                <Image Source="/female-teacher--v2.png"
+                    </StackPanel>
+                    <!-- Element 3-->
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <Border BorderBrush="DimGray" BorderThickness=" 0 0 0 2"/>
+                        <Image   Source="/Images/female-teacher--v2.png"
                                    Stretch="Uniform"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"/>
-                            </Label>
 
-                            <Grid Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-
-                                <Border Grid.Row="0"
-                                    BorderBrush="#244B6A"
+                        <StackPanel Grid.Column="1">
+                            <Border BorderBrush="#244B6A"
                                     BorderThickness="10"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Center"
                                     CornerRadius="20">
 
-                                    <TextBlock  HorizontalAlignment="Left" 
-                                       Text="............................"
+                                <TextBlock  
+                                       Text="................."
                                        VerticalAlignment="Center"
                                        Background="#244B6A"
                                        Foreground="#FAFBFC"
@@ -895,28 +685,22 @@
                                        FontSize="35"
                                        Padding="8"/>
 
-                                </Border>
-                                <Grid Grid.Row="1" >
-                                    <Label Content="Typing..."
-                                           VerticalAlignment="Bottom"
-                                           HorizontalAlignment="Left"
-                                           FontSize="35"
-                                           Foreground="DimGray"
-                                           FontWeight="Medium"
-                                           FontStyle="Italic"
-                                           />
-                                </Grid>
+                            </Border>
+                            <Label Content="Typing..."
+                                   FontSize="35"
+                                   Foreground="DimGray"
+                                   FontWeight="Medium"
+                                   FontStyle="Italic"/>
 
-                                <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 0 0 2"/>
-                            </Grid>
+                        </StackPanel>
 
-                        </Grid>
-                    </Grid>
+                    </StackPanel>
 
                 </Grid>
 
 
-                <!-- Send a message -->
+                <!-- +++ Send a message -->
+                <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -925,38 +709,41 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Border Grid.Column="0" BorderBrush="DarkGray" CornerRadius="15" 
-                             VerticalAlignment="Center"
-                             HorizontalAlignment="Center"
-                             Margin="3"
-                             BorderThickness="5"
-                             >
+                    <Border Grid.Column="0" 
+                            BorderBrush="DarkGray"
+                            CornerRadius="15" 
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            HorizontalAlignment="Center"
+                            Margin="3"
+                            BorderThickness="5">
                         <Label BorderThickness="0"
                             VerticalContentAlignment="Center"
                             Background="DarkGray"
                             HorizontalContentAlignment="Center"
                             Padding="8">
-                            <Image Source="/icons8-link-48 (1).png" 
+                            <Image Source="/Images/icons8-link-48 (1).png" 
                                Stretch="Uniform"/>
                         </Label>
                     </Border>
-                    <Border Grid.Column="1" BorderBrush="DarkGray" CornerRadius="15" 
-                             VerticalAlignment="Center"
-                             HorizontalAlignment="Center"
-                             Margin="3"
-                             BorderThickness="5"
-                             >
+                    <Border Grid.Column="1" 
+                            BorderBrush="DarkGray" 
+                            CornerRadius="15" 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Cursor="Hand"
+                            Margin="3"
+                            BorderThickness="5" >
                         <Label BorderThickness="0"
                             VerticalContentAlignment="Center"
                             Background="DarkGray"
                             HorizontalContentAlignment="Center"
                             Padding="8">
-                            <Image Source="/smiling.png" 
+                            <Image Source="/Images/smiling.png" 
                                Stretch="Uniform"/>
                         </Label>
                     </Border>
-                    <Grid Grid.Column="2" >
-                        <TextBox
+                    <TextBox Grid.Column="2"
                         Name="message"
                         BorderThickness="0"
                         Padding="4 0"  
@@ -966,23 +753,23 @@
                         Text="Type your message"
                         FontWeight="Light"
                         FontSize="30"/>
-
-                    </Grid>
-                    <Button Grid.Column="3" BorderThickness="0"
+                    <Button Grid.Column="3"
+                            Cursor="Hand"
+                            BorderThickness="0"
                             VerticalContentAlignment="Center"
                             Background="#B3C2CC"
                             HorizontalContentAlignment="Center"
+                            Margin="4"
                             Padding="8">
-                        <Image Source="/telegram-app--v3.png" 
+                        <Image Source="/Images/telegram-app--v3.png" 
                                Stretch="Uniform"/>
                     </Button>
 
+                    <Border Grid.Column="2" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
+                    <Border Grid.Column="3" BorderBrush="DimGray" BorderThickness="0 2 0 0"/>
 
                 </Grid>
-
-
             </Grid>
-
         </Grid>
     </Grid>
 </Window>

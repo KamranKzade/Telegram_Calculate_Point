@@ -13,7 +13,6 @@
     <None Remove="external-delete-multimedia-kiranshastry-lineal-kiranshastry.png" />
     <None Remove="female-teacher--v2.png" />
     <None Remove="icons8-link-48 %281%29.png" />
-    <None Remove="icons8-link-48.png" />
     <None Remove="phone.png" />
     <None Remove="school-director-male-skin-type-1-2.png" />
     <None Remove="search.png" />
@@ -22,17 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="chevron-right.png" />
-    <Resource Include="expand-arrow.png" />
-    <Resource Include="external-delete-multimedia-kiranshastry-lineal-kiranshastry.png" />
-    <Resource Include="female-teacher--v2.png" />
-    <Resource Include="icons8-link-48 (1).png" />
-    <Resource Include="icons8-link-48.png" />
-    <Resource Include="phone.png" />
-    <Resource Include="school-director-male-skin-type-1-2.png" />
-    <Resource Include="search.png" />
-    <Resource Include="smiling.png" />
-    <Resource Include="telegram-app--v3.png" />
+    <Resource Include="Images\chevron-right.png" />
+    <Resource Include="Images\expand-arrow.png" />
+    <Resource Include="Images\external-delete-multimedia-kiranshastry-lineal-kiranshastry.png" />
+    <Resource Include="Images\female-teacher--v2.png" />
+    <Resource Include="Images\icons8-link-48 %281%29.png" />
+    <Resource Include="Images\phone.png" />
+    <Resource Include="Images\school-director-male-skin-type-1-2.png" />
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\smiling.png" />
+    <Resource Include="Images\telegram-app--v3.png" />
   </ItemGroup>
 
 </Project>
