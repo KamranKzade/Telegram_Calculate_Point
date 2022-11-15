@@ -22,6 +22,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         AddComboboxSize();
+
     }
 
 
@@ -79,10 +80,16 @@ public partial class MainWindow : Window
     private void Combo_backgroud_SelectionChanged(object sender, SelectionChangedEventArgs e)
         => Backcolor = (Color)(Combo_backgroud.SelectedItem as PropertyInfo)!.GetValue(null, null)!;
 
-    private void combo_border_SelectionChanged(object sender, SelectionChangedEventArgs e) 
+    private void combo_border_SelectionChanged(object sender, SelectionChangedEventArgs e)
         => Bordercolor = (Color)(combo_border.SelectedItem as PropertyInfo)!.GetValue(null, null)!;
- 
-    private void ClickRadioButton(object sender, RoutedEventArgs e) => mypoint.Children.Clear();
+
+    private void ClickRadioButton(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show(@"Əvvəlcədən məlumat vermek isterdik ki,
+Rəng secimlerini dəyişməsəz,
+Default rəng seçiləcək","Validation", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        mypoint.Children.Clear();
+    }
 
     private void AddComboboxSize()
     {
