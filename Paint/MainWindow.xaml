@@ -41,6 +41,7 @@
                              FontWeight="Medium"
                              FontFamily="Arial"
                              Foreground="#FCA311"
+                             Name="ellipse_rbt"
                              FontSize="14">
                         <RadioButton.RenderTransform>
                             <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
@@ -51,6 +52,7 @@
                              Grid.Row="1"
                              FontWeight="Medium"
                              FontFamily="Arial"
+                             Name="polygon_rbt"
                              Foreground="#FCA311"
                              FontSize="14">
                         <RadioButton.RenderTransform>
@@ -62,6 +64,7 @@
                     <RadioButton Grid.Row="2"
                              Content="Rectangle"
                              Margin="1"
+                             Name="rectangle_rbt"
                              FontWeight="Medium"
                              FontFamily="Arial"
                              Foreground="#FCA311"
@@ -120,7 +123,7 @@
                           ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}"
                           DisplayMemberPath="Name"
                           SelectedValuePath="Name" 
-                          Name="ColorCombo" 
+                          Name="combo_border" 
                           Background="{Binding Path=SelectedItem, RelativeSource={RelativeSource Self}}"
                             />
 
@@ -159,8 +162,7 @@
             </Grid>
 
             <!-- Asagi hisse-->
-            <Grid Grid.Row="1" Background="#ABA9C3" Name="mypoint"/>
-
+            <Canvas Grid.Row="1" Background="#ABA9C3" Name="mypoint" MouseDown="mypoint_MouseDown" MouseUp="mypoint_MouseUp"/>
 
 
 
