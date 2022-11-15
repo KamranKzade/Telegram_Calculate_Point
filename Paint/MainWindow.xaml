@@ -37,38 +37,41 @@
                     </Grid.RowDefinitions>
 
                     <RadioButton Content="Ellipse"
-                             Grid.Row="0"
-                             FontWeight="Medium"
-                             FontFamily="Arial"
-                             Foreground="#FCA311"
-                             Name="ellipse_rbt"
-                             FontSize="14">
+                                 Grid.Row="0"
+                                 Click="ClickRadioButton"
+                                 FontWeight="Medium"
+                                 FontFamily="Arial"
+                                 Foreground="#FCA311"
+                                 Name="ellipse_rbt"
+                                 FontSize="14">
                         <RadioButton.RenderTransform>
                             <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
                         </RadioButton.RenderTransform>
                     </RadioButton>
 
                     <RadioButton Content="Polygon"
-                             Grid.Row="1"
-                             FontWeight="Medium"
-                             FontFamily="Arial"
-                             Name="polygon_rbt"
-                             Foreground="#FCA311"
-                             FontSize="14">
+                                 Grid.Row="1"
+                                 FontWeight="Medium"
+                                 FontFamily="Arial"
+                                 Name="polygon_rbt"
+                                 Click="ClickRadioButton"
+                                 Foreground="#FCA311"
+                                 FontSize="14">
                         <RadioButton.RenderTransform>
                             <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
                         </RadioButton.RenderTransform>
                     </RadioButton>
 
 
-                    <RadioButton Grid.Row="2"
-                             Content="Rectangle"
-                             Margin="1"
-                             Name="rectangle_rbt"
-                             FontWeight="Medium"
-                             FontFamily="Arial"
-                             Foreground="#FCA311"
-                             FontSize="14">
+                    <RadioButton  Content="Rectangle"
+                                  Grid.Row="2"
+                                  Margin="1"
+                                  Click="ClickRadioButton"
+                                  Name="rectangle_rbt"
+                                  FontWeight="Medium"
+                                  FontFamily="Arial"
+                                  Foreground="#FCA311"
+                                  FontSize="14">
                         <RadioButton.RenderTransform>
                             <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
                         </RadioButton.RenderTransform>
@@ -90,15 +93,16 @@
                        VerticalContentAlignment="Bottom"
                        HorizontalContentAlignment="Center"/>
                     <ComboBox Grid.Row="1" 
-                          Margin="10"
-                          VerticalContentAlignment="Top"
-                          FontSize="16"
-                          SelectedIndex="0"
-                          ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}"
-                          DisplayMemberPath="Name"
-                          SelectedValuePath="Name" 
-                          Name="Combo_backgroud" 
-                          Background="{Binding Path=SelectedItem, RelativeSource={RelativeSource Self}}"
+                              Margin="10"
+                              VerticalContentAlignment="Top"
+                              FontSize="16"
+                              SelectedIndex="0"
+                              Name="Combo_backgroud" 
+                              ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}"
+                              DisplayMemberPath="Name"
+                              SelectionChanged="Combo_backgroud_SelectionChanged"
+                              SelectedValuePath="Name"
+                              Background="{Binding Path=SelectedItem, RelativeSource={RelativeSource Self}}"
                             />
                 </Grid>
 
@@ -122,6 +126,7 @@
                           SelectedIndex="0"
                           ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}"
                           DisplayMemberPath="Name"
+                          SelectionChanged="combo_border_SelectionChanged"
                           SelectedValuePath="Name" 
                           Name="combo_border" 
                           Background="{Binding Path=SelectedItem, RelativeSource={RelativeSource Self}}"
@@ -151,9 +156,6 @@
                 </Grid>
 
 
-
-
-
                 <!-- Border -->
                 <Border Grid.Column="0" BorderBrush="#5D675B" BorderThickness="0 0 0 5"></Border>
                 <Border Grid.Column="1" BorderBrush="#5D675B" BorderThickness="0 0 0 5"></Border>
@@ -163,8 +165,6 @@
 
             <!-- Asagi hisse-->
             <Canvas Grid.Row="1" Background="#ABA9C3" Name="mypoint" MouseDown="mypoint_MouseDown" MouseUp="mypoint_MouseUp"/>
-
-
 
         </Grid>
     </Border>

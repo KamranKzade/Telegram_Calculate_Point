@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -9,24 +9,19 @@ namespace Paint;
 
 public partial class MainWindow : Window
 {
-     public List<System.Windows.Media.Colors> ColorsList { get; set; } = new List<System.Windows.Media.Colors>();
+    public Color Backcolor { get; set; }
+    public Color Bordercolor { get; set; }
 
+
+    Ellipse ellipse;
+    Rectangle rectangle;
     Point point1, point2;
-
 
 
     public MainWindow()
     {
         InitializeComponent();
         AddComboboxSize();
-
-
-       //foreach (var item in combo_border.Items)
-       //{
-       //    if(item is System.Windows.Media.Colors brush)
-       //        ColorsList.Add(brush);
-       //}
-
     }
 
 
@@ -42,48 +37,52 @@ public partial class MainWindow : Window
         point2.X = e.GetPosition(this).X;
         point2.Y = e.GetPosition(this).Y;
 
-        mypoint.Children.Clear();
+        var point = new Point(point1.X > point2.X ? point2.X : point1.X, point1.Y < point2.Y ? point1.Y : point2.Y);
+
         if (rectangle_rbt.IsChecked == true)
         {
             var type = combo_border.Items.GetType();
 
-            Rectangle rectangle = new()
+            rectangle = new()
             {
                 Height = Math.Abs(point1.Y - point2.Y),
                 Width = Math.Abs(point1.X - point2.X),
-                Fill = new SolidColorBrush(Colors.Red),
-                Stroke = new SolidColorBrush(Colors.Beige),
+                Fill = new SolidColorBrush(Backcolor),
+                Stroke = new SolidColorBrush(Bordercolor),
                 StrokeThickness = double.Parse(combo_borderSize.Text),
             };
+
             mypoint.Children.Add(rectangle);
 
-            
-            // Canvas.SetTop(rectangle, Math.Abs(point1.Y - point2.Y) + 5);
-            // Canvas.SetLeft(rectangle, Math.Abs(point1.X - point2.X) +5);
+
+            Canvas.SetTop(rectangle, point.Y - 118);
+            Canvas.SetLeft(rectangle, point.X);
         }
 
         else if (ellipse_rbt.IsChecked == true)
         {
-            Ellipse ellipse = new()
+            ellipse = new()
             {
                 Height = Math.Abs(point1.Y - point2.Y),
                 Width = Math.Abs(point1.X - point2.X),
-                Fill = new SolidColorBrush(Colors.Red),
-                Stroke = new SolidColorBrush(Colors.Beige),
-                StrokeThickness = double.Parse(combo_borderSize.Text),
+                Fill = new SolidColorBrush(Backcolor),
+                Stroke = new SolidColorBrush(Bordercolor),
+                StrokeThickness = double.Parse(combo_borderSize.Text)
             };
             mypoint.Children.Add(ellipse);
-            // Canvas.SetTop(ellipse, Math.Abs(point1.Y - point2.Y) + 5);
-            // Canvas.SetLeft(ellipse, Math.Abs(point1.X - point2.X) + 5);
+            Canvas.SetTop(ellipse, point.Y - 118);
+            Canvas.SetLeft(ellipse, point.X);
         }
     }
 
 
+    private void Combo_backgroud_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        => Backcolor = (Color)(Combo_backgroud.SelectedItem as PropertyInfo)!.GetValue(null, null)!;
 
-
-
-
-
+    private void combo_border_SelectionChanged(object sender, SelectionChangedEventArgs e) 
+        => Bordercolor = (Color)(combo_border.SelectedItem as PropertyInfo)!.GetValue(null, null)!;
+ 
+    private void ClickRadioButton(object sender, RoutedEventArgs e) => mypoint.Children.Clear();
 
     private void AddComboboxSize()
     {
