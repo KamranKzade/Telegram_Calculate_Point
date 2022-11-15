@@ -5,87 +5,165 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paint"
         mc:Ignorable="d"
+        Icon="/Images/paint2.png"
         WindowStartupLocation="CenterScreen"
         Title="Paint" Height="600" Width="800"
         ResizeMode="NoResize">
-    <Grid Background="#DDFFD9">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
-        </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+    <Border BorderBrush="#5D675B" BorderThickness="5">
 
-            
-            <!-- RadioButton -->
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+        <Grid Background="#DDFFD9">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
 
-                <RadioButton Content="Ellipse"
+            <!-- Yuxari hisse -->
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!-- RadioButton -->
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <RadioButton Content="Ellipse"
                              Grid.Row="0"
                              FontWeight="Medium"
                              FontFamily="Arial"
                              Foreground="#FCA311"
                              FontSize="14">
-                    <RadioButton.RenderTransform>
-                        <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
-                    </RadioButton.RenderTransform>
-                </RadioButton>
+                        <RadioButton.RenderTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
+                        </RadioButton.RenderTransform>
+                    </RadioButton>
 
-                <RadioButton Content="Polygon"
+                    <RadioButton Content="Polygon"
                              Grid.Row="1"
                              FontWeight="Medium"
                              FontFamily="Arial"
                              Foreground="#FCA311"
                              FontSize="14">
-                    <RadioButton.RenderTransform>
-                        <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
-                    </RadioButton.RenderTransform>
-                </RadioButton>
+                        <RadioButton.RenderTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
+                        </RadioButton.RenderTransform>
+                    </RadioButton>
 
 
-                <RadioButton Grid.Row="2"
+                    <RadioButton Grid.Row="2"
                              Content="Rectangle"
                              Margin="1"
                              FontWeight="Medium"
                              FontFamily="Arial"
                              Foreground="#FCA311"
                              FontSize="14">
-                    <RadioButton.RenderTransform>
-                        <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
-                    </RadioButton.RenderTransform>
-                </RadioButton>
+                        <RadioButton.RenderTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2" ></ScaleTransform>
+                        </RadioButton.RenderTransform>
+                    </RadioButton>
 
-            </Grid>
+                </Grid>
 
-            <Grid Grid.Column="1" Background="Azure">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                <!-- Select Background -->
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" 
+                    <Label Grid.Row="0" 
                        Content="Select BackGround"
                        FontSize="16"
                        FontWeight="Medium"
                        VerticalContentAlignment="Bottom"
                        HorizontalContentAlignment="Center"/>
-                <ComboBox Grid.Row="1"
+                    <ComboBox Grid.Row="1" 
                           Margin="10"
                           VerticalContentAlignment="Top"
+                          FontSize="16"
+                          SelectedIndex="0"
+                          ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Name" 
+                          Name="Combo_backgroud" 
+                          Background="{Binding Path=SelectedItem, RelativeSource={RelativeSource Self}}"
+                            />
+                </Grid>
+
+                <!-- Select BorderColor -->
+                <Grid Grid.Column="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" 
+                       Content="Select BorderColor"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       VerticalContentAlignment="Bottom"
+                       HorizontalContentAlignment="Center"/>
+                    <ComboBox Grid.Row="1" 
+                          Margin="10"
+                          VerticalContentAlignment="Top"
+                          FontSize="16"
+                          SelectedIndex="0"
+                          ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Name" 
+                          Name="ColorCombo" 
+                          Background="{Binding Path=SelectedItem, RelativeSource={RelativeSource Self}}"
+                            />
+
+                </Grid>
+
+                <!-- Select BorderSize -->
+                <Grid Grid.Column="3" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" 
+                       Content="Select BorderSize"
+                       FontSize="16"
+                       FontWeight="Medium"
+                       VerticalContentAlignment="Bottom"
+                       HorizontalContentAlignment="Center"/>
+                    <ComboBox Grid.Row="1"
+                          Name="combo_borderSize"
+                          Margin="10"
+                          VerticalContentAlignment="Top"
+                          HorizontalContentAlignment="Center"
                           FontSize="16"/>
+                </Grid>
+
+
+
+
+
+                <!-- Border -->
+                <Border Grid.Column="0" BorderBrush="#5D675B" BorderThickness="0 0 0 5"></Border>
+                <Border Grid.Column="1" BorderBrush="#5D675B" BorderThickness="0 0 0 5"></Border>
+                <Border Grid.Column="2" BorderBrush="#5D675B" BorderThickness="0 0 0 5"></Border>
+                <Border Grid.Column="3" BorderBrush="#5D675B" BorderThickness="0 0 0 5"></Border>
             </Grid>
 
-        </Grid>
+            <!-- Asagi hisse-->
+            <Grid Grid.Row="1" Background="#ABA9C3" Name="mypoint"/>
 
-    </Grid>
+
+
+
+        </Grid>
+    </Border>
 </Window>

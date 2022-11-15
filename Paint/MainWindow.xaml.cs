@@ -1,28 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace Paint
+namespace Paint;
+
+public partial class MainWindow : Window
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    // public List<Brush> ColorsList { get; set; }
+
+    public Brush SelectedColor { get; set; }
+
+    public List<Brush> ColorsList { get; set; }
+
+
+
+    public MainWindow()
     {
-        public MainWindow()
+        InitializeComponent();
+        AddComboboxSize();
+
+      
+    }
+
+
+
+
+
+
+
+
+
+    private void AddComboboxSize()
+    {
+        for (int i = 8; i <= 72; i++)
         {
-            InitializeComponent();
+            if (i % 2 == 0)
+                combo_borderSize.Items.Add(i);
         }
+        combo_borderSize.SelectedIndex = 0;
     }
 }
+
