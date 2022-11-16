@@ -12,14 +12,32 @@ namespace Paint;
 
 public partial class MainWindow : Window
 {
+    #region GetColor
+
     public Color Backcolor { get; set; }
     public Color Bordercolor { get; set; }
 
+    #endregion
 
-    Polygon polygon = new();
+    #region Ellipse && Rectangle
+
     Ellipse ellipse;
     Rectangle rectangle;
     Point point1, point2;
+
+    #endregion
+
+    #region Polygon
+
+    Polygon polygon;
+    public List<double> PointY { get; set; } = new();
+    public List<double> PointX { get; set; } = new();
+
+    Point PolyPoint = new();
+    PointCollection points = new PointCollection();
+
+    #endregion
+
 
 
     public MainWindow()
@@ -29,11 +47,6 @@ public partial class MainWindow : Window
 
     }
 
-    public List<double> PointY { get; set; } = new();
-    public List<double> PointX { get; set; } = new();
-
-    PointCollection points = new PointCollection();
-    Point PolyPoint = new();
 
     private void mypoint_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
     {
@@ -45,16 +58,14 @@ public partial class MainWindow : Window
         {
             PolyPoint = e.GetPosition(this);
 
-
             PolyPoint.X = e.GetPosition(this).X;
             PolyPoint.Y = e.GetPosition(this).Y - ((window.Height - 10) / 5);
 
             points.Add(PolyPoint);
 
+
             PointX.Add(PolyPoint.X);
             PointY.Add(PolyPoint.Y);
-
-            
         }
     }
 
@@ -101,30 +112,23 @@ public partial class MainWindow : Window
         }
         else if (polygon_rbt.IsChecked == true)
         {
-            //MessageBox.Show("Gelecekde tamamlanacaq", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            var maxX = PointX.Max();
-            var maXY = PointY.Max();
-
             polygon = new()
             {
                 Points = points,
-                Height = maXY,
-                Width = maxX,
+                Height = PointX.Max(),
+                Width = PointY.Max(),
                 Fill = new SolidColorBrush(Backcolor),
                 Stroke = new SolidColorBrush(Bordercolor),
                 StrokeThickness = double.Parse(combo_borderSize.Text)
             };
 
-            var minX = PointX.Min();
-            var minY = PointY.Min();
-
             mypoint.Children.Add(polygon);
-            Canvas.SetTop(polygon, minX);
-            Canvas.SetLeft(polygon, minY);
+            Canvas.SetTop(polygon, PointX.Min());
+            Canvas.SetLeft(polygon, PointY.Min());
         }
-        //
-        //else
-        //    MessageBox.Show("Zehmet olmasa Fiqurlardan Birini Secin", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        else
+            MessageBox.Show("Zehmet olmasa Fiqurlardan Birini Secin", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
     }
 
 
