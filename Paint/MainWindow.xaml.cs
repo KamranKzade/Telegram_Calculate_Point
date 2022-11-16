@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Windows;
+using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -13,6 +16,7 @@ public partial class MainWindow : Window
     public Color Bordercolor { get; set; }
 
 
+    Polygon polygon = new();
     Ellipse ellipse;
     Rectangle rectangle;
     Point point1, point2;
@@ -25,12 +29,33 @@ public partial class MainWindow : Window
 
     }
 
+    public List<double> PointY { get; set; } = new();
+    public List<double> PointX { get; set; } = new();
 
+    PointCollection points = new PointCollection();
+    Point PolyPoint = new();
 
     private void mypoint_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
     {
         point1.X = e.GetPosition(this).X;
         point1.Y = e.GetPosition(this).Y;
+
+
+        if (polygon_rbt.IsChecked == true)
+        {
+            PolyPoint = e.GetPosition(this);
+
+
+            PolyPoint.X = e.GetPosition(this).X;
+            PolyPoint.Y = e.GetPosition(this).Y - ((window.Height - 10) / 5);
+
+            points.Add(PolyPoint);
+
+            PointX.Add(PolyPoint.X);
+            PointY.Add(PolyPoint.Y);
+
+            
+        }
     }
 
     private void mypoint_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -53,10 +78,9 @@ public partial class MainWindow : Window
                 StrokeThickness = double.Parse(combo_borderSize.Text),
             };
 
+
             mypoint.Children.Add(rectangle);
-
-
-            Canvas.SetTop(rectangle, point.Y - 118);
+            Canvas.SetTop(rectangle, point.Y - (window.Height - 10) / 5);
             Canvas.SetLeft(rectangle, point.X);
         }
 
@@ -70,11 +94,39 @@ public partial class MainWindow : Window
                 Stroke = new SolidColorBrush(Bordercolor),
                 StrokeThickness = double.Parse(combo_borderSize.Text)
             };
+
             mypoint.Children.Add(ellipse);
-            Canvas.SetTop(ellipse, point.Y - 118);
+            Canvas.SetTop(ellipse, point.Y - (window.Height - 10) / 5);
             Canvas.SetLeft(ellipse, point.X);
         }
+        else if (polygon_rbt.IsChecked == true)
+        {
+            //MessageBox.Show("Gelecekde tamamlanacaq", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            var maxX = PointX.Max();
+            var maXY = PointY.Max();
+
+            polygon = new()
+            {
+                Points = points,
+                Height = maXY,
+                Width = maxX,
+                Fill = new SolidColorBrush(Backcolor),
+                Stroke = new SolidColorBrush(Bordercolor),
+                StrokeThickness = double.Parse(combo_borderSize.Text)
+            };
+
+            var minX = PointX.Min();
+            var minY = PointY.Min();
+
+            mypoint.Children.Add(polygon);
+            Canvas.SetTop(polygon, minX);
+            Canvas.SetLeft(polygon, minY);
+        }
+        //
+        //else
+        //    MessageBox.Show("Zehmet olmasa Fiqurlardan Birini Secin", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
     }
+
 
 
     private void Combo_backgroud_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -87,9 +139,10 @@ public partial class MainWindow : Window
     {
         MessageBox.Show(@"Əvvəlcədən məlumat vermek isterdik ki,
 Rəng secimlerini dəyişməsəz,
-Default rəng seçiləcək","Validation", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+Default rəng seçiləcək", "Validation", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         mypoint.Children.Clear();
     }
+
 
     private void AddComboboxSize()
     {
@@ -100,5 +153,6 @@ Default rəng seçiləcək","Validation", MessageBoxButton.OK, MessageBoxImage.E
         }
         combo_borderSize.SelectedIndex = 0;
     }
-}
 
+
+}
